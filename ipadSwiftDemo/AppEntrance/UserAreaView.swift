@@ -8,14 +8,16 @@
 
 import UIKit
 
-let iconImageWH = 100
-let buttonW = 100
-let buttonH = 40
+
 
 typealias VacateBlock = () -> Void
 typealias SignUpBlock = () -> Void
 
 class UserAreaView: UIView {
+  
+  let iconImageWH = 100
+  let buttonW = 100
+  let buttonH = 40
   
   var userIconView :UIImageView!
   var titleLabel :UILabel!

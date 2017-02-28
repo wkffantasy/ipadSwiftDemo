@@ -19,6 +19,7 @@
 		9A2A4CCF1E65191A0057B4F2 /* UserAreaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2A4CCE1E65191A0057B4F2 /* UserAreaView.swift */; };
 		9A2A4CD31E65232B0057B4F2 /* UIColor+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2A4CD21E65232B0057B4F2 /* UIColor+extension.swift */; };
 		9A2A4CD51E6523E50057B4F2 /* NSString+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2A4CD41E6523E50057B4F2 /* NSString+extension.swift */; };
+		9A2A4CD81E6560020057B4F2 /* LeftListRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2A4CD71E6560020057B4F2 /* LeftListRootView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		9A2A4CCE1E65191A0057B4F2 /* UserAreaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAreaView.swift; sourceTree = "<group>"; };
 		9A2A4CD21E65232B0057B4F2 /* UIColor+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+extension.swift"; sourceTree = "<group>"; };
 		9A2A4CD41E6523E50057B4F2 /* NSString+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSString+extension.swift"; sourceTree = "<group>"; };
+		9A2A4CD71E6560020057B4F2 /* LeftListRootView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftListRootView.swift; sourceTree = "<group>"; };
 		C2DA91A8D77DE510BE3668F4 /* Pods-ipadSwiftDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ipadSwiftDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-ipadSwiftDemo/Pods-ipadSwiftDemo.release.xcconfig"; sourceTree = "<group>"; };
 		D7B8E68FC82D8E16EC0A6F0F /* Pods-ipadSwiftDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ipadSwiftDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ipadSwiftDemo/Pods-ipadSwiftDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		F61B64B9DC31EEBC5F3DA043 /* Pods_ipadSwiftDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ipadSwiftDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,6 +131,7 @@
 		9A2A4C981E6510D80057B4F2 /* ipadSwiftDemo */ = {
 			isa = PBXGroup;
 			children = (
+				9A2A4CD61E655F000057B4F2 /* Classes */,
 				9A2A4CD01E6522D20057B4F2 /* Common */,
 				9A2A4CCB1E6518870057B4F2 /* AppEntrance */,
 				9A2A4C991E6510D80057B4F2 /* AppDelegate.swift */,
@@ -163,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				9A2A4CCC1E6518E80057B4F2 /* ViewController.swift */,
+				9A2A4CD71E6560020057B4F2 /* LeftListRootView.swift */,
 				9A2A4CCE1E65191A0057B4F2 /* UserAreaView.swift */,
 			);
 			path = AppEntrance;
@@ -183,6 +187,13 @@
 				9A2A4CD41E6523E50057B4F2 /* NSString+extension.swift */,
 			);
 			path = Tools;
+			sourceTree = "<group>";
+		};
+		9A2A4CD61E655F000057B4F2 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -377,6 +388,7 @@
 				9A2A4CCD1E6518E90057B4F2 /* ViewController.swift in Sources */,
 				9A2A4CD31E65232B0057B4F2 /* UIColor+extension.swift in Sources */,
 				9A2A4CD51E6523E50057B4F2 /* NSString+extension.swift in Sources */,
+				9A2A4CD81E6560020057B4F2 /* LeftListRootView.swift in Sources */,
 				9A2A4C9A1E6510D80057B4F2 /* AppDelegate.swift in Sources */,
 				9A2A4CA21E6510D80057B4F2 /* ipadSwiftDemo.xcdatamodeld in Sources */,
 			);

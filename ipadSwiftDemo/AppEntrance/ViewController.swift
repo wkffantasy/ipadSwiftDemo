@@ -12,10 +12,14 @@ import SnapKit
 
 class ViewController: UIViewController {
 
+  var userView :UserAreaView!
+  var leftListRootView :LeftListRootView!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
     makeUserAreaView()
+    makeLeftListRootView()
     
   }
 
@@ -23,10 +27,32 @@ class ViewController: UIViewController {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
   }
+  func makeLeftListRootView() {
+    
+    let titleArray = [
+      "我的首页",
+      "我的学习计划",
+      "我的练习",
+      "我的模考",
+      "我的批改",
+      "我的逐题精讲",
+    ]
+    
+    leftListRootView = LeftListRootView(titlesArray:titleArray,frame:CGRect.zero)
+    self.view.addSubview(leftListRootView)
+    leftListRootView.snp.makeConstraints { (make) in
+      
+      make.left.equalTo(10)
+      make.top.equalTo(userView.snp.bottom).offset(20)
+      make.width.equalTo(170)
+      
+    }
+    
+  }
   
   func makeUserAreaView() {
     
-    let userView:UserAreaView = UserAreaView(frame:CGRect.zero)
+    userView = UserAreaView(frame:CGRect.zero)
     self.view.addSubview(userView)
     userView.signUpBlock = {
       print("in controller clickSignButton")
