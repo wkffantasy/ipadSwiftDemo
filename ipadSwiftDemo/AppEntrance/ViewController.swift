@@ -28,6 +28,12 @@ class ViewController: UIViewController {
     
     let userView:UserAreaView = UserAreaView(frame:CGRect.zero)
     self.view.addSubview(userView)
+    userView.signUpBlock = {
+      print("in controller clickSignButton")
+    }
+    userView.vacateBlock = {
+      print("in controller clickVacateButton")
+    }
     
     userView.snp.makeConstraints{(make) in
       
