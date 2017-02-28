@@ -8,16 +8,36 @@
 
 import UIKit
 
+import SnapKit
+
 class ViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    makeUserAreaView()
+    
   }
 
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
+  }
+  
+  func makeUserAreaView() {
+    
+    let userView:UserAreaView = UserAreaView(frame:CGRect.zero)
+    self.view.addSubview(userView)
+    
+    userView.snp.makeConstraints{(make) in
+      
+      make.top.equalTo(0)
+      make.left.equalTo(0)
+      make.right.equalTo(0)
+      make.height.equalTo(200)
+      
+    }
+  
   }
 
 

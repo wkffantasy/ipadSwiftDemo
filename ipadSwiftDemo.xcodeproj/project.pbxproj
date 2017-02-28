@@ -7,14 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6DC3989F11E6A1F4E7B621BE /* Pods_ipadSwiftDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F61B64B9DC31EEBC5F3DA043 /* Pods_ipadSwiftDemo.framework */; };
 		9A2A4C9A1E6510D80057B4F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2A4C991E6510D80057B4F2 /* AppDelegate.swift */; };
-		9A2A4C9C1E6510D80057B4F2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2A4C9B1E6510D80057B4F2 /* ViewController.swift */; };
 		9A2A4C9F1E6510D80057B4F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A2A4C9D1E6510D80057B4F2 /* Main.storyboard */; };
 		9A2A4CA21E6510D80057B4F2 /* ipadSwiftDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9A2A4CA01E6510D80057B4F2 /* ipadSwiftDemo.xcdatamodeld */; };
 		9A2A4CA41E6510D80057B4F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A2A4CA31E6510D80057B4F2 /* Assets.xcassets */; };
 		9A2A4CA71E6510D80057B4F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A2A4CA51E6510D80057B4F2 /* LaunchScreen.storyboard */; };
 		9A2A4CB21E6510D80057B4F2 /* ipadSwiftDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2A4CB11E6510D80057B4F2 /* ipadSwiftDemoTests.swift */; };
 		9A2A4CBD1E6510D80057B4F2 /* ipadSwiftDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2A4CBC1E6510D80057B4F2 /* ipadSwiftDemoUITests.swift */; };
+		9A2A4CCD1E6518E90057B4F2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2A4CCC1E6518E80057B4F2 /* ViewController.swift */; };
+		9A2A4CCF1E65191A0057B4F2 /* UserAreaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2A4CCE1E65191A0057B4F2 /* UserAreaView.swift */; };
+		9A2A4CD31E65232B0057B4F2 /* UIColor+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2A4CD21E65232B0057B4F2 /* UIColor+extension.swift */; };
+		9A2A4CD51E6523E50057B4F2 /* NSString+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2A4CD41E6523E50057B4F2 /* NSString+extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +41,6 @@
 /* Begin PBXFileReference section */
 		9A2A4C961E6510D80057B4F2 /* ipadSwiftDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ipadSwiftDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A2A4C991E6510D80057B4F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9A2A4C9B1E6510D80057B4F2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9A2A4C9E1E6510D80057B4F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9A2A4CA11E6510D80057B4F2 /* ipadSwiftDemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ipadSwiftDemo.xcdatamodel; sourceTree = "<group>"; };
 		9A2A4CA31E6510D80057B4F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +52,13 @@
 		9A2A4CB81E6510D80057B4F2 /* ipadSwiftDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ipadSwiftDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A2A4CBC1E6510D80057B4F2 /* ipadSwiftDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ipadSwiftDemoUITests.swift; sourceTree = "<group>"; };
 		9A2A4CBE1E6510D80057B4F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9A2A4CCC1E6518E80057B4F2 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9A2A4CCE1E65191A0057B4F2 /* UserAreaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAreaView.swift; sourceTree = "<group>"; };
+		9A2A4CD21E65232B0057B4F2 /* UIColor+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+extension.swift"; sourceTree = "<group>"; };
+		9A2A4CD41E6523E50057B4F2 /* NSString+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSString+extension.swift"; sourceTree = "<group>"; };
+		C2DA91A8D77DE510BE3668F4 /* Pods-ipadSwiftDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ipadSwiftDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-ipadSwiftDemo/Pods-ipadSwiftDemo.release.xcconfig"; sourceTree = "<group>"; };
+		D7B8E68FC82D8E16EC0A6F0F /* Pods-ipadSwiftDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ipadSwiftDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ipadSwiftDemo/Pods-ipadSwiftDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		F61B64B9DC31EEBC5F3DA043 /* Pods_ipadSwiftDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ipadSwiftDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DC3989F11E6A1F4E7B621BE /* Pods_ipadSwiftDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +87,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		302B55E92816CBDDF3175222 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F61B64B9DC31EEBC5F3DA043 /* Pods_ipadSwiftDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3A77AEB49CA8260CDCBDF443 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D7B8E68FC82D8E16EC0A6F0F /* Pods-ipadSwiftDemo.debug.xcconfig */,
+				C2DA91A8D77DE510BE3668F4 /* Pods-ipadSwiftDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		9A2A4C8D1E6510D80057B4F2 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +111,8 @@
 				9A2A4CB01E6510D80057B4F2 /* ipadSwiftDemoTests */,
 				9A2A4CBB1E6510D80057B4F2 /* ipadSwiftDemoUITests */,
 				9A2A4C971E6510D80057B4F2 /* Products */,
+				3A77AEB49CA8260CDCBDF443 /* Pods */,
+				302B55E92816CBDDF3175222 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,8 +129,9 @@
 		9A2A4C981E6510D80057B4F2 /* ipadSwiftDemo */ = {
 			isa = PBXGroup;
 			children = (
+				9A2A4CD01E6522D20057B4F2 /* Common */,
+				9A2A4CCB1E6518870057B4F2 /* AppEntrance */,
 				9A2A4C991E6510D80057B4F2 /* AppDelegate.swift */,
-				9A2A4C9B1E6510D80057B4F2 /* ViewController.swift */,
 				9A2A4C9D1E6510D80057B4F2 /* Main.storyboard */,
 				9A2A4CA31E6510D80057B4F2 /* Assets.xcassets */,
 				9A2A4CA51E6510D80057B4F2 /* LaunchScreen.storyboard */,
@@ -128,6 +159,32 @@
 			path = ipadSwiftDemoUITests;
 			sourceTree = "<group>";
 		};
+		9A2A4CCB1E6518870057B4F2 /* AppEntrance */ = {
+			isa = PBXGroup;
+			children = (
+				9A2A4CCC1E6518E80057B4F2 /* ViewController.swift */,
+				9A2A4CCE1E65191A0057B4F2 /* UserAreaView.swift */,
+			);
+			path = AppEntrance;
+			sourceTree = "<group>";
+		};
+		9A2A4CD01E6522D20057B4F2 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				9A2A4CD11E6522F20057B4F2 /* Tools */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		9A2A4CD11E6522F20057B4F2 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				9A2A4CD21E65232B0057B4F2 /* UIColor+extension.swift */,
+				9A2A4CD41E6523E50057B4F2 /* NSString+extension.swift */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +192,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9A2A4CC11E6510D80057B4F2 /* Build configuration list for PBXNativeTarget "ipadSwiftDemo" */;
 			buildPhases = (
+				72747FCE0D6A95689923E915 /* [CP] Check Pods Manifest.lock */,
 				9A2A4C921E6510D80057B4F2 /* Sources */,
 				9A2A4C931E6510D80057B4F2 /* Frameworks */,
 				9A2A4C941E6510D80057B4F2 /* Resources */,
+				069384E33237EF5E736780CC /* [CP] Embed Pods Frameworks */,
+				C536CEA1E25C3CBAD8C403AE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -260,12 +320,63 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		069384E33237EF5E736780CC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ipadSwiftDemo/Pods-ipadSwiftDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		72747FCE0D6A95689923E915 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C536CEA1E25C3CBAD8C403AE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ipadSwiftDemo/Pods-ipadSwiftDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9A2A4C921E6510D80057B4F2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A2A4C9C1E6510D80057B4F2 /* ViewController.swift in Sources */,
+				9A2A4CCF1E65191A0057B4F2 /* UserAreaView.swift in Sources */,
+				9A2A4CCD1E6518E90057B4F2 /* ViewController.swift in Sources */,
+				9A2A4CD31E65232B0057B4F2 /* UIColor+extension.swift in Sources */,
+				9A2A4CD51E6523E50057B4F2 /* NSString+extension.swift in Sources */,
 				9A2A4C9A1E6510D80057B4F2 /* AppDelegate.swift in Sources */,
 				9A2A4CA21E6510D80057B4F2 /* ipadSwiftDemo.xcdatamodeld in Sources */,
 			);
@@ -417,10 +528,12 @@
 		};
 		9A2A4CC21E6510D80057B4F2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D7B8E68FC82D8E16EC0A6F0F /* Pods-ipadSwiftDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = ZZ9329T9X9;
 				INFOPLIST_FILE = ipadSwiftDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "--fantasy--.ipadSwiftDemo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -430,10 +543,12 @@
 		};
 		9A2A4CC31E6510D80057B4F2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C2DA91A8D77DE510BE3668F4 /* Pods-ipadSwiftDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = ZZ9329T9X9;
 				INFOPLIST_FILE = ipadSwiftDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "--fantasy--.ipadSwiftDemo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -518,6 +633,7 @@
 				9A2A4CC31E6510D80057B4F2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9A2A4CC41E6510D80057B4F2 /* Build configuration list for PBXNativeTarget "ipadSwiftDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -526,6 +642,7 @@
 				9A2A4CC61E6510D80057B4F2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9A2A4CC71E6510D80057B4F2 /* Build configuration list for PBXNativeTarget "ipadSwiftDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -534,6 +651,7 @@
 				9A2A4CC91E6510D80057B4F2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
