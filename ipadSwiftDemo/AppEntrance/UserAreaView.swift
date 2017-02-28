@@ -8,8 +8,6 @@
 
 import UIKit
 
-
-
 typealias VacateBlock = () -> Void
 typealias SignUpBlock = () -> Void
 

@@ -40,6 +40,9 @@ class ViewController: UIViewController {
     
     leftListRootView = LeftListRootView(titlesArray:titleArray,frame:CGRect.zero)
     self.view.addSubview(leftListRootView)
+    leftListRootView.clickButtonBlock = { (tag :Int) in
+      print("in controller,click button,the tag is \(tag)")
+    }
     leftListRootView.snp.makeConstraints { (make) in
       
       make.left.equalTo(10)
@@ -60,9 +63,7 @@ class ViewController: UIViewController {
     userView.vacateBlock = {
       print("in controller clickVacateButton")
     }
-    
     userView.snp.makeConstraints{(make) in
-      
       make.top.equalTo(0)
       make.left.equalTo(0)
       make.right.equalTo(0)
