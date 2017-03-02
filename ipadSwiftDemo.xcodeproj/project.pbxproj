@@ -27,6 +27,7 @@
 		9A2A4CE91E6577250057B4F2 /* ModelExamController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2A4CE81E6577250057B4F2 /* ModelExamController.swift */; };
 		9A2A4CEB1E6577330057B4F2 /* CheckController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2A4CEA1E6577330057B4F2 /* CheckController.swift */; };
 		9A2A4CED1E6577490057B4F2 /* BrieflyTeachController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2A4CEC1E6577490057B4F2 /* BrieflyTeachController.swift */; };
+		9A2A4CF21E65838F0057B4F2 /* TabsScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2A4CF11E65838F0057B4F2 /* TabsScrollView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		9A2A4CE81E6577250057B4F2 /* ModelExamController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelExamController.swift; sourceTree = "<group>"; };
 		9A2A4CEA1E6577330057B4F2 /* CheckController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckController.swift; sourceTree = "<group>"; };
 		9A2A4CEC1E6577490057B4F2 /* BrieflyTeachController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrieflyTeachController.swift; sourceTree = "<group>"; };
+		9A2A4CF11E65838F0057B4F2 /* TabsScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabsScrollView.swift; sourceTree = "<group>"; };
 		C2DA91A8D77DE510BE3668F4 /* Pods-ipadSwiftDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ipadSwiftDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-ipadSwiftDemo/Pods-ipadSwiftDemo.release.xcconfig"; sourceTree = "<group>"; };
 		D7B8E68FC82D8E16EC0A6F0F /* Pods-ipadSwiftDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ipadSwiftDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ipadSwiftDemo/Pods-ipadSwiftDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		F61B64B9DC31EEBC5F3DA043 /* Pods_ipadSwiftDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ipadSwiftDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -189,6 +191,7 @@
 		9A2A4CD01E6522D20057B4F2 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				9A2A4CF01E65836F0057B4F2 /* Views */,
 				9A2A4CD11E6522F20057B4F2 /* Tools */,
 			);
 			path = Common;
@@ -271,6 +274,14 @@
 				9A2A4CEC1E6577490057B4F2 /* BrieflyTeachController.swift */,
 			);
 			path = BrieflyTeach;
+			sourceTree = "<group>";
+		};
+		9A2A4CF01E65836F0057B4F2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9A2A4CF11E65838F0057B4F2 /* TabsScrollView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -472,6 +483,7 @@
 				9A2A4CE11E6576D80057B4F2 /* HomeController.swift in Sources */,
 				9A2A4CED1E6577490057B4F2 /* BrieflyTeachController.swift in Sources */,
 				9A2A4CD81E6560020057B4F2 /* LeftListRootView.swift in Sources */,
+				9A2A4CF21E65838F0057B4F2 /* TabsScrollView.swift in Sources */,
 				9A2A4CE31E6576EB0057B4F2 /* StudyPlanController.swift in Sources */,
 				9A2A4C9A1E6510D80057B4F2 /* AppDelegate.swift in Sources */,
 				9A2A4CA21E6510D80057B4F2 /* ipadSwiftDemo.xcdatamodeld in Sources */,

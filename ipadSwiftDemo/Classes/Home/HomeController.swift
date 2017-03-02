@@ -9,27 +9,39 @@
 import UIKit
 
 class HomeController: UIViewController {
+  
+  var tabsScrollView:TabsScrollView!
+  var titleArray:Array<String>!
+  
+  override func viewDidLoad() {
+      super.viewDidLoad()
+      self.view.backgroundColor = UIColor.white
+      setupViews()
+    
+      // Do any additional setup after loading the view.
+  }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-      self.view.backgroundColor = UIColor.randomColor()
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+  override func didReceiveMemoryWarning() {
+      super.didReceiveMemoryWarning()
+      // Dispose of any resources that can be recreated.
+  }
+  func setupViews() {
+    
+    titleArray = [
+                  "发如雪",
+                  "东风破",
+                  "兰亭序",
+                  "七里香",
+                  "青花瓷",
+                  "珊瑚海",
+                  ]
+    tabsScrollView = TabsScrollView.init(titleArray: titleArray, frame: CGRect.zero, selectColor: UIColor.colorWithRGB(red: 74, green: 153, blue: 255), normalColor: UIColor.colorWithRGB(red: 134, green: 134, blue: 134))
+    self.view.addSubview(tabsScrollView)
+    tabsScrollView.snp.makeConstraints { (make) in
+      make.top.left.right.equalTo(0)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
+  }
 
 }
