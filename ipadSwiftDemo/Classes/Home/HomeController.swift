@@ -11,7 +11,6 @@ import UIKit
 class HomeController: UIViewController,UIScrollViewDelegate {
   
   var tabsSelectView:TabsSelectView!
-  var titleArray:Array<String>!
   var vcScrollView :UIScrollView!
   
   override func viewDidLoad() {
@@ -40,12 +39,12 @@ class HomeController: UIViewController,UIScrollViewDelegate {
   }
   func setupViews() {
     
-    titleArray = [
-                  "全部",
-                  "学习中",
-                  "未开始",
-                  "已过期",
-                  ]
+    let titleArray = [
+                      "全部",
+                      "学习中",
+                      "未开始",
+                      "已过期",
+                      ]
     tabsSelectView = TabsSelectView.init(titleArray: titleArray, frame: CGRect.zero, selectColor: UIColor.colorWithRGB(red: 74, green: 153, blue: 255), normalColor: UIColor.colorWithRGB(red: 134, green: 134, blue: 134))
     self.view.addSubview(tabsSelectView)
     tabsSelectView.snp.makeConstraints { (make) in
