@@ -28,6 +28,44 @@ class TabsSelectView: UIView {
   var clickButtonBlock : ClickButtonBlock?
   var haveImages : Bool!
   
+  // public
+  func updateButtonState(tag:Int) {
+    print("updateButtonState tag ==\(tag)")
+    assert(self.buttonsArray.count - 1 >= tag , "")
+    let tagButton = self.buttonsArray[tag]
+    self.changeButtonState(button: tagButton)
+    
+  }
+  // public
+  init(titleArray:Array<String>,frame:CGRect,selectColor:UIColor,normalColor:UIColor){
+    
+    super.init(frame:frame)
+    assert(titleArray.count > 0 ,"this array should not be empty")
+    self.titleArray = titleArray
+    self.selectColor = selectColor
+    self.normalColor = normalColor
+    buttonsArray = []
+    self.haveImages = false
+    setupViews()
+  }
+  // public
+  init(frame: CGRect,selectImageArray:Array<String>,normalImageArray:Array<String>) {
+    super.init(frame: frame)
+    assert(selectImageArray.count > 0, "")
+    assert(normalImageArray.count > 0, "")
+    assert(selectImageArray.count == normalImageArray.count,"")
+    buttonsArray = []
+    self.haveImages = true
+    self.imageNormalArray = normalImageArray
+    self.imageSelectArray = selectImageArray
+    self.selectColor = UIColor.colorWithRGB(red: 248, green: 150, blue: 1)
+    self.normalColor = UIColor.colorWithRGB(red: 142, green: 142, blue: 147)
+    buttonsArray = []
+    setupViews()
+  }
+  
+  
+  // all is private
   required init?(coder aDecoder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
@@ -173,40 +211,6 @@ class TabsSelectView: UIView {
     
   }
   
-  // public
-  func updateButtonState(tag:Int) {
-    print("updateButtonState tag ==\(tag)")
-    assert(self.buttonsArray.count - 1 >= tag , "")
-    let tagButton = self.buttonsArray[tag]
-    self.changeButtonState(button: tagButton)
-    
-  }
-  
-  init(titleArray:Array<String>,frame:CGRect,selectColor:UIColor,normalColor:UIColor){
-    
-    super.init(frame:frame)
-    assert(titleArray.count > 0 ,"this array should not be empty")
-    self.titleArray = titleArray
-    self.selectColor = selectColor
-    self.normalColor = normalColor
-    buttonsArray = []
-    self.haveImages = false
-    setupViews()
-  }
-  
-  init(frame: CGRect,selectImageArray:Array<String>,normalImageArray:Array<String>) {
-    super.init(frame: frame)
-    assert(selectImageArray.count > 0, "")
-    assert(normalImageArray.count > 0, "")
-    assert(selectImageArray.count == normalImageArray.count,"")
-    buttonsArray = []
-    self.haveImages = true
-    self.imageNormalArray = normalImageArray
-    self.imageSelectArray = selectImageArray
-    self.selectColor = UIColor.colorWithRGB(red: 248, green: 150, blue: 1)
-    self.normalColor = UIColor.colorWithRGB(red: 142, green: 142, blue: 147)
-    buttonsArray = []
-    setupViews()
-  }
+ 
 
 }

@@ -99,6 +99,7 @@ class ViewController: UIViewController {
     titlesArray = [
       "我的首页",
       "我的学习计划",
+      "我的直播",
       "我的练习",
       "我的模考",
       "我的批改",

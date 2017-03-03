@@ -5,8 +5,8 @@ use_frameworks!
 
 target ‘ipadSwiftDemo’ do
 
-pod 'MBProgressHUD'
-pod 'SDWebImage'
-pod 'SnapKit'
+  pod 'MBProgressHUD'
+  pod 'SDWebImage'
+  pod 'SnapKit'
 
- end
+end
