@@ -8,5 +8,6 @@ target ‘ipadSwiftDemo’ do
   pod 'MBProgressHUD'
   pod 'SDWebImage'
   pod 'SnapKit'
+  pod 'SwiftHTTP'
 
 end
