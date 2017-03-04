@@ -40,8 +40,6 @@ public class VeloxDownloadInstance : NSObject
             self.friendlyName = friendlyName
             self.filePath = path
             self.downloadDate = date
-      print("----------------")
-      print(path)
         
     }
     

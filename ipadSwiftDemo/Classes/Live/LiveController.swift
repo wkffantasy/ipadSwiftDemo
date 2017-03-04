@@ -19,6 +19,7 @@ class LiveController: UIViewController {
   let url6 = "http://media7.smartstudy.com/pd/videos/2015/3e/5a/16041/mp4/dest.m3u8"
   let url7 = "http://v.smartstudy.com/pd/videos/2015/67/df/10422/mp4/dest.m3u8"
 
+  var downloadTool :DownloadToolManage!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -58,69 +59,110 @@ class LiveController: UIViewController {
     
   }
   func clickToDelet(button:UIButton) {
+    
     print("clickToDelet")
-    let url = URL(string: url5)
-    if(VeloxCacheManagement.fileExistForURL(url: url!)){
-      let result =  VeloxCacheManagement.deleteFileForURL(url: url!)
-      print("deleteFileForURL : \(result)")
-    } else {
-      print("不存在这个url")
+    
+  }
+  func changeUrlStringToName(urlString:String) -> String {
+  
+    var name = urlString.subStringTo(to: (urlString.length - 14))
+    if name.hasPrefix("http://") {
+      name = name.SubStringFrom(from: 7)
     }
+    
+    let newName = name.replacingOccurrences(of: "/", with: "~") + ".mp4"
+
+    print("name == \(name)")
+    print("newName ==\(newName)")
+    return newName
+  
   }
   func clickToDownlod(button:UIButton) {
     print("clickToDownlod")
-    let url = URL(string: url5)
     
-    //是否存在这个url
-    if(VeloxCacheManagement.fileExistForURL(url: url!)){
-      print("这个url 已经下载好了")
-      return
-    } else {
-      print("不存在这个url")
+    let startBlock = {(url:String,totalSize:String) in
+      print("startBlock url ==\(url)")
+      print("startBlock totalSize==\(totalSize)")
+      
     }
-    
-    let veloxDownloader = VeloxDownloadManager.sharedInstance
-    let progressClosure : (CGFloat,VeloxDownloadInstance) -> (Void)
-    let remainingTimeClosure : (CGFloat) -> Void
-    let completionClosure : (Bool) -> Void
-    
-    progressClosure = {(progress,downloadInstace) in
-      print("Progress of File : \(downloadInstace.filename) is \(Float(progress))")
+    let progressBlock = {(progress:String,remainTime:String,speed:String) in
+      print("progressBlock")
+      print("progress ==\(progress)")
+      print("remainTime ==\(remainTime)")
+      print("speed ==\(speed)")
+      
     }
-    
-    remainingTimeClosure = {(timeRemaning) in
-      print("Remaining Time is : \(timeRemaning)")
+    let completeBlock = {(path:String) in
+      print("completeBlock path ==\(path)")
     }
-    
-    completionClosure = {(status) in
-      print("is Download completed : \(status)")
+    let failedBlock = {(error:Error) in
+      print("failedBlock error==",error)
     }
-    
-    let homeDirectory = NSHomeDirectory()
-    let name = url5.subStringTo(to: (url5.length - 10))
-    let charset=NSCharacterSet(charactersIn:"\\")
-    
-//    let name1 = name.
-    print("homeDirectory == \(homeDirectory)")
-    print("name == \(name)")
-    
-    veloxDownloader.downloadFile(
-      withURL: url!,
-      name: name,
-      directoryName: nil,
-      friendlyName: nil,
-      progressClosure: progressClosure,
-      remainigtTimeClosure: remainingTimeClosure,
-      completionClosure: completionClosure,
-      backgroundingMode: false
-    )
+    downloadTool = DownloadToolManage()
+    downloadTool.downloadVideoFiles(downloadUrl: url5, toSavePath: "asd", startBlock: startBlock, progressBlock: progressBlock, completeBlock: completeBlock, failedBlock: failedBlock)
     
   }
   override func didReceiveMemoryWarning() {
       super.didReceiveMemoryWarning()
       // Dispose of any resources that can be recreated.
   }
-    
+  /*
+   点击下载
+   let url = URL(string: url5)
+   
+   //是否存在这个url
+   if(VeloxCacheManagement.fileExistForURL(url: url!)){
+   print("这个url 已经下载好了")
+   return
+   } else {
+   print("不存在这个url")
+   }
+   
+   let veloxDownloader = VeloxDownloadManager.sharedInstance
+   let progressClosure : (CGFloat,VeloxDownloadInstance) -> (Void)
+   let remainingTimeClosure : (CGFloat) -> Void
+   let completionClosure : (Bool) -> Void
+   
+   progressClosure = {(progress,downloadInstace) in
+   print("Progress of File : \(downloadInstace.filename) is \(Float(progress))")
+   }
+   
+   remainingTimeClosure = {(timeRemaning) in
+   print("Remaining Time is : \(timeRemaning)")
+   }
+   
+   completionClosure = {(status) in
+   print("is Download completed : \(status)")
+   }
+   
+   let name = self.changeUrlStringToName(urlString: url5)
+   
+   veloxDownloader.downloadFile(
+   withURL: url!,
+   name: name,
+   directoryName: nil,
+   friendlyName: nil,
+   progressClosure: progressClosure,
+   remainigtTimeClosure: remainingTimeClosure,
+   completionClosure: completionClosure,
+   backgroundingMode: false
+   )
+   
+   */
+  
+  /*
+   print("clickToDelet")
+   let url = URL(string: url5)
+   if(VeloxCacheManagement.fileExistForURL(url: url!)){
+   let result =  VeloxCacheManagement.deleteFileForURL(url: url!)
+   print("deleteFileForURL : \(result)")
+   } else {
+   print("不存在这个url")
+   }
+   
+   
+   */
+  
 
   
 

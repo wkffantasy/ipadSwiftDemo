@@ -64,7 +64,7 @@ public class VeloxCacheManagement
         }
         
     }
-    
+  
    public static func cachesDirectoryURlPath() -> URL {
         
         let cachesDirectoryURLPath = URL(fileURLWithPath: NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true)[0])
