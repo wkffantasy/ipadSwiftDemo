@@ -55,7 +55,55 @@ class BrieflyTeachController: UIViewController {
         make.height.equalTo(40)
       }
       
+      let uploadButton = UIButton(type: .custom)
+      uploadButton.backgroundColor = UIColor.randomColor()
+      uploadButton.setTitle("上传一个图片", for: UIControlState.normal)
+      uploadButton.setTitleColor(UIColor.colorWithRGB(red: 33, green: 33, blue: 33), for: UIControlState.normal)
+      uploadButton.addTarget(self, action: #selector(clickToUploadFile(button:)), for: UIControlEvents.touchUpInside)
+      self.view.addSubview(uploadButton)
+      uploadButton.snp.makeConstraints { (make) in
+        make.top.equalTo(getParamButton.snp.bottom).offset(20)
+        make.left.equalTo(postButton.snp.right).offset(20)
+        make.width.equalTo(200)
+        make.height.equalTo(40)
+      }
+      
+  }
+
+  func clickToUploadFile(button:UIButton) {
+    print("clickToUploadFile")
+    /*
+     let data = UIImageJPEGRepresentation(portraitImg, 1)
+     let headStr = data?.base64EncodedString()
+     url = "http://api.test.smartstudy.com/user/avatar/upload?w=300&h=300"
+     */
+    
+    let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
+    hud.label.textColor = UIColor.colorWithHexString("7f7f7f");
+    hud.mode = .text
+    hud.bezelView.backgroundColor = UIColor.black
+    hud.contentColor = UIColor.white
+    hud.label.text = "上传中"
+    hud.margin = 30.0
+    hud.removeFromSuperViewOnHide = true
+    
+
+    let param = [
+      "image1":self.getFilePath(fileName: "WechatIMG3", ofType: "jpeg"),
+    ]
+    
+    let urlString = "http://api.test.smartstudy.com/user/avatar/upload?w=300&h=300"
+//     let urlString = "http://api.test.smartstudy.com/user/avatar/upload?w=300&h=300"
+    let net = NetWorkManage.manger.uploadFileMethodUrl(url: urlString, filePathDict: param, second: nil, parameters: nil, successBlock: { (data) in
+      print("upload one image data ==",data)
+      hud.hide(animated: true)
+    }) { (error) in
+      print("upload failed error == \(error)")
+      hud.hide(animated: true)
     }
+    print("net ==",net)
+    
+  }
   func clickToGetData(button:UIButton) {
     
     //http://dev.smartstudy.com:3100/api/mobile/v3/product/1958
@@ -157,7 +205,15 @@ class BrieflyTeachController: UIViewController {
     }
     print("net ==",net)
     
-    
+  }
+  func getFilePath(fileName:String,ofType:String) -> String {
+    print("fileName ==\(fileName)")
+    print("ofType ==\(ofType)")
+    let path = Bundle.main.path(forResource: fileName, ofType: ofType)
+//    let path = Bundle.main.path(forResource: fileName, ofType: ofType)!
+    print("path == \(path)")
+    assert((path?.length)! > 0,"")
+    return path!
   }
     
 

@@ -9,26 +9,23 @@
 import UIKit
 import SwiftHTTP
 
-/**
- *  成功---请求数据返回block
- *
- *  @param responseObject 返回数据data
- */
-//public typealias success = ( _ code: Int,  _  mssage: String, _ responseObject: [String: AnyObject]) -> Void
-public typealias success = (_ responseObject: [String: AnyObject]) -> Void
-/**
- *  失败---请求数据失败block
- *
- *  @param error 返回数据的错误
- */
-public typealias failure = (_ error: String) -> Void
+//成功的回调
+public typealias HttpSuccess = (_ responseObject: [String: AnyObject]) -> Void
+
+//失败的回调
+public typealias HttpFailure = (_ error: String) -> Void
+
+//正在上传的回调
+//public typealias HttpProgress = (_ progress: String) -> Void
+
 
 class NetWorkManage: NSObject {
   
   static let manger = NetWorkManage()
   
-  func getMethodUrl(url:String,second:Double?=nil,parameters:[String: Any]?=nil,successBlock: success?=nil,failurlBlock: failure?=nil) -> HTTP?{
+  func getMethodUrl(url:String,second:Double?=nil,parameters:[String: Any]?=nil,successBlock: HttpSuccess?=nil,failurlBlock: HttpFailure?=nil) -> HTTP?{
     
+    assert(url.length > 0 , "")
     //设置超时时间
     var newSecond = second;
     if newSecond == nil {
@@ -53,8 +50,8 @@ class NetWorkManage: NSObject {
       return nil
     }
   }
-  func postMethodUrl(url:String,second:Double?=nil,parameters:[String: Any]?=nil,successBlock: success?=nil,failurlBlock: failure?=nil) -> HTTP?{
-    
+  func postMethodUrl(url:String,second:Double?=nil,parameters:[String: Any]?=nil,successBlock: HttpSuccess?=nil,failurlBlock: HttpFailure?=nil) -> HTTP?{
+    assert(url.length > 0 , "")
     //设置超时时间
     var newSecond = second;
     if newSecond == nil {
@@ -80,9 +77,27 @@ class NetWorkManage: NSObject {
       return nil
     }
   }
+  func uploadFileMethodUrl(url:String,filePathDict:[String:String]?=nil,second:Double?=nil,parameters:[String: Any]?=nil,successBlock: HttpSuccess?=nil,failurlBlock: HttpFailure?=nil) -> HTTP?{
+    
+    assert(url.length > 0 , "")
+    assert(filePathDict != nil , "")
+    
+    var newParameters = [String: Any]()
+    if parameters != nil {
+      newParameters = parameters!
+    }
+    if filePathDict != nil {
+      for item in filePathDict! {
+        let fileUrl = URL.init(fileURLWithPath: item.value)
+        newParameters[item.key] = Upload(fileUrl:fileUrl)
+      }
+    }
+    return self.postMethodUrl(url: url, second: second, parameters: newParameters, successBlock: successBlock, failurlBlock: failurlBlock)
+   
+  }
   
   //执行回调
-  private func doCallBack(successBlock:success?=nil,failedBlock:failure?=nil,message:Any) {
+  private func doCallBack(successBlock:HttpSuccess?=nil,failedBlock:HttpFailure?=nil,message:Any) {
     
     if successBlock != nil {
       
@@ -94,8 +109,9 @@ class NetWorkManage: NSObject {
         }else{
           retDic = ["code":-1,"msg":"网络超时，请刷新重试！"]
         }
-      } catch {
+      } catch{
         //出错
+        print("occur error",message)
         retDic = ["code":-1,"msg":"网络超时，请刷新重试！"]
       }
       

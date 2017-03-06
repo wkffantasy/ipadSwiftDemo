@@ -16,4 +16,4 @@ let kAPI_Dev    = "http://dev.smartstudy.com:3100"
 let kAPI_Online = "http://www.smartstudy.com"
 
 //商品详情页
-let kProductInfoApi = kAPI_Dev +  "/api/mobile/v3/product/"
+let kProductInfoApi = kAPI_Online +  "/api/mobile/v3/product/"

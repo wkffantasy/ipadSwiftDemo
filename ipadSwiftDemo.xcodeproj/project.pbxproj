@@ -36,6 +36,7 @@
 		9AF410EB1E6D09CE009B45FC /* NetWorkManage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF410EA1E6D09CE009B45FC /* NetWorkManage.swift */; };
 		9AF410ED1E6D0A5B009B45FC /* ApiConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF410EC1E6D0A5B009B45FC /* ApiConstant.swift */; };
 		9AF410EF1E6D389A009B45FC /* HUDTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF410EE1E6D389A009B45FC /* HUDTool.swift */; };
+		9AF410F41E6D59D2009B45FC /* WechatIMG3.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9AF410F31E6D59D2009B45FC /* WechatIMG3.jpeg */; };
 		9AFA1A931E697682007AEF93 /* VeloxCacheManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFA1A901E697682007AEF93 /* VeloxCacheManagement.swift */; };
 		9AFA1A941E697682007AEF93 /* VeloxDownloadInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFA1A911E697682007AEF93 /* VeloxDownloadInstance.swift */; };
 		9AFA1A951E697682007AEF93 /* VeloxDownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFA1A921E697682007AEF93 /* VeloxDownloadManager.swift */; };
@@ -93,6 +94,7 @@
 		9AF410EA1E6D09CE009B45FC /* NetWorkManage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetWorkManage.swift; sourceTree = "<group>"; };
 		9AF410EC1E6D0A5B009B45FC /* ApiConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiConstant.swift; sourceTree = "<group>"; };
 		9AF410EE1E6D389A009B45FC /* HUDTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUDTool.swift; sourceTree = "<group>"; };
+		9AF410F31E6D59D2009B45FC /* WechatIMG3.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = WechatIMG3.jpeg; sourceTree = "<group>"; };
 		9AFA1A901E697682007AEF93 /* VeloxCacheManagement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VeloxCacheManagement.swift; sourceTree = "<group>"; };
 		9AFA1A911E697682007AEF93 /* VeloxDownloadInstance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VeloxDownloadInstance.swift; sourceTree = "<group>"; };
 		9AFA1A921E697682007AEF93 /* VeloxDownloadManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VeloxDownloadManager.swift; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 		9A2A4CD01E6522D20057B4F2 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				9AF410F01E6D577A009B45FC /* Images */,
 				9A2A4CF01E65836F0057B4F2 /* Views */,
 				9A2A4CD11E6522F20057B4F2 /* Tools */,
 			);
@@ -311,6 +314,14 @@
 				9A5718DB1E6802B100267860 /* TabsSelectView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		9AF410F01E6D577A009B45FC /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				9AF410F31E6D59D2009B45FC /* WechatIMG3.jpeg */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 		9AFA1A8F1E697665007AEF93 /* DownloadTool */ = {
@@ -441,6 +452,7 @@
 				9A2A4CA71E6510D80057B4F2 /* LaunchScreen.storyboard in Resources */,
 				9A2A4CA41E6510D80057B4F2 /* Assets.xcassets in Resources */,
 				9A2A4C9F1E6510D80057B4F2 /* Main.storyboard in Resources */,
+				9AF410F41E6D59D2009B45FC /* WechatIMG3.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
