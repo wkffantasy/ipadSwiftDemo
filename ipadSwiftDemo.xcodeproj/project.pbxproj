@@ -33,6 +33,9 @@
 		9A5718DA1E68025500267860 /* HomeOverdueController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5718D91E68025500267860 /* HomeOverdueController.swift */; };
 		9A5718DC1E6802B100267860 /* TabsSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5718DB1E6802B100267860 /* TabsSelectView.swift */; };
 		9A76C7111E6A993E006414D0 /* DownloadToolManage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A76C7101E6A993E006414D0 /* DownloadToolManage.swift */; };
+		9AF410EB1E6D09CE009B45FC /* NetWorkManage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF410EA1E6D09CE009B45FC /* NetWorkManage.swift */; };
+		9AF410ED1E6D0A5B009B45FC /* ApiConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF410EC1E6D0A5B009B45FC /* ApiConstant.swift */; };
+		9AF410EF1E6D389A009B45FC /* HUDTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF410EE1E6D389A009B45FC /* HUDTool.swift */; };
 		9AFA1A931E697682007AEF93 /* VeloxCacheManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFA1A901E697682007AEF93 /* VeloxCacheManagement.swift */; };
 		9AFA1A941E697682007AEF93 /* VeloxDownloadInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFA1A911E697682007AEF93 /* VeloxDownloadInstance.swift */; };
 		9AFA1A951E697682007AEF93 /* VeloxDownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFA1A921E697682007AEF93 /* VeloxDownloadManager.swift */; };
@@ -87,6 +90,9 @@
 		9A5718D91E68025500267860 /* HomeOverdueController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeOverdueController.swift; sourceTree = "<group>"; };
 		9A5718DB1E6802B100267860 /* TabsSelectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabsSelectView.swift; sourceTree = "<group>"; };
 		9A76C7101E6A993E006414D0 /* DownloadToolManage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadToolManage.swift; sourceTree = "<group>"; };
+		9AF410EA1E6D09CE009B45FC /* NetWorkManage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetWorkManage.swift; sourceTree = "<group>"; };
+		9AF410EC1E6D0A5B009B45FC /* ApiConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiConstant.swift; sourceTree = "<group>"; };
+		9AF410EE1E6D389A009B45FC /* HUDTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUDTool.swift; sourceTree = "<group>"; };
 		9AFA1A901E697682007AEF93 /* VeloxCacheManagement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VeloxCacheManagement.swift; sourceTree = "<group>"; };
 		9AFA1A911E697682007AEF93 /* VeloxDownloadInstance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VeloxDownloadInstance.swift; sourceTree = "<group>"; };
 		9AFA1A921E697682007AEF93 /* VeloxDownloadManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VeloxDownloadManager.swift; sourceTree = "<group>"; };
@@ -219,6 +225,8 @@
 				9AFA1A8F1E697665007AEF93 /* DownloadTool */,
 				9A2A4CD21E65232B0057B4F2 /* UIColor+extension.swift */,
 				9A2A4CD41E6523E50057B4F2 /* NSString+extension.swift */,
+				9AF410EC1E6D0A5B009B45FC /* ApiConstant.swift */,
+				9AF410EE1E6D389A009B45FC /* HUDTool.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -312,6 +320,7 @@
 				9AFA1A911E697682007AEF93 /* VeloxDownloadInstance.swift */,
 				9AFA1A921E697682007AEF93 /* VeloxDownloadManager.swift */,
 				9A76C7101E6A993E006414D0 /* DownloadToolManage.swift */,
+				9AF410EA1E6D09CE009B45FC /* NetWorkManage.swift */,
 			);
 			path = DownloadTool;
 			sourceTree = "<group>";
@@ -505,6 +514,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A2A4CE91E6577250057B4F2 /* ModelExamController.swift in Sources */,
+				9AF410EB1E6D09CE009B45FC /* NetWorkManage.swift in Sources */,
 				9A2A4CE71E6577130057B4F2 /* ExerciseController.swift in Sources */,
 				9A2A4CCF1E65191A0057B4F2 /* UserAreaView.swift in Sources */,
 				9A2A4CEB1E6577330057B4F2 /* CheckController.swift in Sources */,
@@ -516,6 +526,7 @@
 				9A5718D41E6801F500267860 /* HomeAllController.swift in Sources */,
 				9AFA1A931E697682007AEF93 /* VeloxCacheManagement.swift in Sources */,
 				9A2A4CE11E6576D80057B4F2 /* HomeController.swift in Sources */,
+				9AF410EF1E6D389A009B45FC /* HUDTool.swift in Sources */,
 				9AFA1A941E697682007AEF93 /* VeloxDownloadInstance.swift in Sources */,
 				9A2A4CED1E6577490057B4F2 /* BrieflyTeachController.swift in Sources */,
 				9A5718D81E68022A00267860 /* HomeNotStartController.swift in Sources */,
@@ -526,6 +537,7 @@
 				9A5718DC1E6802B100267860 /* TabsSelectView.swift in Sources */,
 				9A2A4CE31E6576EB0057B4F2 /* StudyPlanController.swift in Sources */,
 				9A2A4C9A1E6510D80057B4F2 /* AppDelegate.swift in Sources */,
+				9AF410ED1E6D0A5B009B45FC /* ApiConstant.swift in Sources */,
 				9A2A4CA21E6510D80057B4F2 /* ipadSwiftDemo.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
