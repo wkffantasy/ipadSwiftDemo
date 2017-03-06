@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DownloadToolManage:NSObject,URLSessionDelegate,URLSessionDownloadDelegate {
+class DownloadToolManage:NSObject,URLSessionDelegate {
   
   // 进度的String 22.0%  剩余时间的String 04:46 速度的String 300KB/s
   typealias DownloadingProgress = (String,String,String) -> ()
