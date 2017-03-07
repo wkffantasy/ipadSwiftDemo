@@ -9,6 +9,5 @@ target ‘ipadSwiftDemo’ do
   pod 'SDWebImage'
   pod 'SnapKit'
   pod 'SwiftHTTP'
-  pod 'ZFDownload'
 
 end
