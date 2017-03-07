@@ -38,9 +38,6 @@
 		9AF410ED1E6D0A5B009B45FC /* ApiConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF410EC1E6D0A5B009B45FC /* ApiConstant.swift */; };
 		9AF410EF1E6D389A009B45FC /* HUDTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF410EE1E6D389A009B45FC /* HUDTool.swift */; };
 		9AF410F41E6D59D2009B45FC /* WechatIMG3.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9AF410F31E6D59D2009B45FC /* WechatIMG3.jpeg */; };
-		9AFA1A931E697682007AEF93 /* VeloxCacheManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFA1A901E697682007AEF93 /* VeloxCacheManagement.swift */; };
-		9AFA1A941E697682007AEF93 /* VeloxDownloadInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFA1A911E697682007AEF93 /* VeloxDownloadInstance.swift */; };
-		9AFA1A951E697682007AEF93 /* VeloxDownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFA1A921E697682007AEF93 /* VeloxDownloadManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,9 +94,6 @@
 		9AF410EC1E6D0A5B009B45FC /* ApiConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiConstant.swift; sourceTree = "<group>"; };
 		9AF410EE1E6D389A009B45FC /* HUDTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUDTool.swift; sourceTree = "<group>"; };
 		9AF410F31E6D59D2009B45FC /* WechatIMG3.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = WechatIMG3.jpeg; sourceTree = "<group>"; };
-		9AFA1A901E697682007AEF93 /* VeloxCacheManagement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VeloxCacheManagement.swift; sourceTree = "<group>"; };
-		9AFA1A911E697682007AEF93 /* VeloxDownloadInstance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VeloxDownloadInstance.swift; sourceTree = "<group>"; };
-		9AFA1A921E697682007AEF93 /* VeloxDownloadManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VeloxDownloadManager.swift; sourceTree = "<group>"; };
 		C2DA91A8D77DE510BE3668F4 /* Pods-ipadSwiftDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ipadSwiftDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-ipadSwiftDemo/Pods-ipadSwiftDemo.release.xcconfig"; sourceTree = "<group>"; };
 		D7B8E68FC82D8E16EC0A6F0F /* Pods-ipadSwiftDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ipadSwiftDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ipadSwiftDemo/Pods-ipadSwiftDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		F61B64B9DC31EEBC5F3DA043 /* Pods_ipadSwiftDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ipadSwiftDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -330,9 +324,6 @@
 		9AFA1A8F1E697665007AEF93 /* DownloadTool */ = {
 			isa = PBXGroup;
 			children = (
-				9AFA1A901E697682007AEF93 /* VeloxCacheManagement.swift */,
-				9AFA1A911E697682007AEF93 /* VeloxDownloadInstance.swift */,
-				9AFA1A921E697682007AEF93 /* VeloxDownloadManager.swift */,
 				9A76C7101E6A993E006414D0 /* DownloadToolManage.swift */,
 				9AF410EA1E6D09CE009B45FC /* NetWorkManage.swift */,
 			);
@@ -535,14 +526,11 @@
 				9A2A4CEB1E6577330057B4F2 /* CheckController.swift in Sources */,
 				9A2A4CE51E6576FD0057B4F2 /* LiveController.swift in Sources */,
 				9A2A4CCD1E6518E90057B4F2 /* ViewController.swift in Sources */,
-				9AFA1A951E697682007AEF93 /* VeloxDownloadManager.swift in Sources */,
 				9A2A4CD31E65232B0057B4F2 /* UIColor+extension.swift in Sources */,
 				9A2A4CD51E6523E50057B4F2 /* NSString+extension.swift in Sources */,
 				9A5718D41E6801F500267860 /* HomeAllController.swift in Sources */,
-				9AFA1A931E697682007AEF93 /* VeloxCacheManagement.swift in Sources */,
 				9A2A4CE11E6576D80057B4F2 /* HomeController.swift in Sources */,
 				9AF410EF1E6D389A009B45FC /* HUDTool.swift in Sources */,
-				9AFA1A941E697682007AEF93 /* VeloxDownloadInstance.swift in Sources */,
 				9A2A4CED1E6577490057B4F2 /* BrieflyTeachController.swift in Sources */,
 				9A5718D81E68022A00267860 /* HomeNotStartController.swift in Sources */,
 				9A2A4CD81E6560020057B4F2 /* LeftListRootView.swift in Sources */,
