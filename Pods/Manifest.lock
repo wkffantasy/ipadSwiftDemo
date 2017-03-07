@@ -1,23 +1,43 @@
 PODS:
+  - ASIHTTPRequest (1.8.2):
+    - ASIHTTPRequest/ASIWebPageRequest (= 1.8.2)
+    - ASIHTTPRequest/CloudFiles (= 1.8.2)
+    - ASIHTTPRequest/Core (= 1.8.2)
+    - ASIHTTPRequest/S3 (= 1.8.2)
+  - ASIHTTPRequest/ASIWebPageRequest (1.8.2):
+    - ASIHTTPRequest/Core
+  - ASIHTTPRequest/CloudFiles (1.8.2):
+    - ASIHTTPRequest/Core
+  - ASIHTTPRequest/Core (1.8.2):
+    - Reachability
+  - ASIHTTPRequest/S3 (1.8.2):
+    - ASIHTTPRequest/Core
   - MBProgressHUD (1.0.0)
+  - Reachability (3.2)
   - SDWebImage (4.0.0):
     - SDWebImage/Core (= 4.0.0)
   - SDWebImage/Core (4.0.0)
   - SnapKit (3.2.0)
   - SwiftHTTP (2.0.2)
+  - ZFDownload (1.0.2):
+    - ASIHTTPRequest
 
 DEPENDENCIES:
   - MBProgressHUD
   - SDWebImage
   - SnapKit
   - SwiftHTTP
+  - ZFDownload
 
 SPEC CHECKSUMS:
+  ASIHTTPRequest: ec013992946676b7978dcbde6396d57312d21db4
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
+  Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
   SwiftHTTP: faa1a5f7670568ffc9361898229dbe84a6088468
+  ZFDownload: a52f94ebb080833b8a8ceb19a409f2941343fe7f
 
-PODFILE CHECKSUM: a3e7f8e14c234add0d25a78b5c273a05d1c1306b
+PODFILE CHECKSUM: cc884988634dfeabf590f43663dda154ae51b4b3
 
 COCOAPODS: 1.2.0
