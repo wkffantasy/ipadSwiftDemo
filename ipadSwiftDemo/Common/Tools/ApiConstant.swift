@@ -8,12 +8,11 @@
 
 import Foundation
 
-//网络超时时长
+// 网络超时时长
 let kNetTimeOut = Double(30)
 
-
-let kAPI_Dev    = "http://dev.smartstudy.com:3100"
+let kAPI_Dev = "http://dev.smartstudy.com:3100"
 let kAPI_Online = "http://www.smartstudy.com"
 
-//商品详情页
-let kProductInfoApi = kAPI_Online +  "/api/mobile/v3/product/"
+// 商品详情页
+let kProductInfoApi = kAPI_Online + "/api/mobile/v3/product/"

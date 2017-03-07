@@ -8,7 +8,5 @@
 
 import Foundation
 
-//all notification names
-let kNonificationNameChangeLeftRootVCName  = "kNonificationNameChangeLeftRootVCName"
-
-
+// all notification names
+let kNonificationNameChangeLeftRootVCName = "kNonificationNameChangeLeftRootVCName"
