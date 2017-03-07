@@ -84,6 +84,8 @@ class LeftListRootView: UIView {
   }
   func clickButton(button: UIButton) {
     print("clickButton and its tag == \(button.tag)")
+    
+
     if button != self.selectButton {
       self.selectButton.setTitleColor(titleNormalColor, for: UIControlState.normal)
       self.selectButton.backgroundColor = normalBackColor
@@ -95,6 +97,10 @@ class LeftListRootView: UIView {
         self.clickButtonBlock!(self.selectButton.tag)
       }
     }
+    
+    //send notification
+    NotificationCenter.default.post(name: NSNotification.Name(rawValue: kNonificationNameChangeLeftRootVCName), object: nil, userInfo: ["currentTag":button.tag])
+    
   }
   
   required init?(coder aDecoder: NSCoder) {

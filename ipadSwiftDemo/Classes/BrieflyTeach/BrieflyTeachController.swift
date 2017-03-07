@@ -78,16 +78,16 @@ class BrieflyTeachController: UIViewController {
      url = "http://api.test.smartstudy.com/user/avatar/upload?w=300&h=300"
      */
     
-    let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
-    hud.label.textColor = UIColor.colorWithHexString("7f7f7f");
-    hud.mode = .text
-    hud.bezelView.backgroundColor = UIColor.black
-    hud.contentColor = UIColor.white
-    hud.label.text = "上传中"
-    hud.margin = 30.0
-    hud.removeFromSuperViewOnHide = true
+//    let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
+//    hud.label.textColor = UIColor.colorWithHexString("7f7f7f");
+//    hud.mode = .text
+//    hud.bezelView.backgroundColor = UIColor.black
+//    hud.contentColor = UIColor.white
+//    hud.label.text = "上传中"
+//    hud.margin = 30.0
+//    hud.removeFromSuperViewOnHide = true
+    let hud = HUDTool.tool.showTextHUD(text: "上传中...", view: self.view)
     
-
     let param = [
       "image1":self.getFilePath(fileName: "WechatIMG3", ofType: "jpeg"),
     ]
@@ -108,14 +108,15 @@ class BrieflyTeachController: UIViewController {
     
     //http://dev.smartstudy.com:3100/api/mobile/v3/product/1958
     
-    let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
-    hud.label.textColor = UIColor.colorWithHexString("7f7f7f");
-    hud.mode = .text
-    hud.bezelView.backgroundColor = UIColor.black
-    hud.contentColor = UIColor.white
-    hud.label.text = "请求中"
-    hud.margin = 30.0
-    hud.removeFromSuperViewOnHide = true
+//    let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
+//    hud.label.textColor = UIColor.colorWithHexString("7f7f7f");
+//    hud.mode = .text
+//    hud.bezelView.backgroundColor = UIColor.black
+//    hud.contentColor = UIColor.white
+//    hud.label.text = "请求中"
+//    hud.margin = 30.0
+//    hud.removeFromSuperViewOnHide = true
+    let hud = HUDTool.tool.showTextHUD(text: "请求中...", view: self.view)
     
   
     let productId = "1958"
@@ -139,16 +140,17 @@ class BrieflyTeachController: UIViewController {
     //token :u3JniMLnENWipLuyCcSre21K6n16wcmQ
     let param = ["token":"u3JniMLnENWipLuyCcSre21K6n16wcmQ"]
     
-    let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
-    hud.label.textColor = UIColor.colorWithHexString("7f7f7f");
-    hud.mode = .text
-    hud.bezelView.backgroundColor = UIColor.black
-    hud.contentColor = UIColor.white
-    hud.label.text = "请求中"
-    hud.margin = 30.0
-    hud.removeFromSuperViewOnHide = true
+//    let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
+//    hud.label.textColor = UIColor.colorWithHexString("7f7f7f");
+//    hud.mode = .text
+//    hud.bezelView.backgroundColor = UIColor.black
+//    hud.contentColor = UIColor.white
+//    hud.label.text = "请求中"
+//    hud.margin = 30.0
+//    hud.removeFromSuperViewOnHide = true
     
-    
+    let hud = HUDTool.tool.showTextHUD(text: "请求中...", view: self.view)
+  
     let productId = "1958"
     let urlString = kProductInfoApi + productId
     let net  = NetWorkManage.manger.getMethodUrl(url: urlString, second: nil, parameters: param, successBlock: { (data) in
@@ -184,15 +186,16 @@ class BrieflyTeachController: UIViewController {
       "type":"1"
     ]
     
-    let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
-    hud.label.textColor = UIColor.colorWithHexString("7f7f7f");
-    hud.mode = .text
-    hud.bezelView.backgroundColor = UIColor.black
-    hud.contentColor = UIColor.white
-    hud.label.text = "请求中"
-    hud.margin = 30.0
-    hud.removeFromSuperViewOnHide = true
+//    let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
+//    hud.label.textColor = UIColor.colorWithHexString("7f7f7f");
+//    hud.mode = .text
+//    hud.bezelView.backgroundColor = UIColor.black
+//    hud.contentColor = UIColor.white
+//    hud.label.text = "请求中"
+//    hud.margin = 30.0
+//    hud.removeFromSuperViewOnHide = true
     
+    let hud = HUDTool.tool.showTextHUD(text: "请求中...", view: self.view)
     
     let urlString = "http://test.smartstudy.com/api/slice/13974/progress"
    

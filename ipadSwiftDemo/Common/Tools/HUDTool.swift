@@ -14,7 +14,7 @@ class HUDTool: NSObject {
   static let tool = HUDTool()
   
   
-  func showTextHUD(text : String?, view: UIView) {
+  func showTextHUD(text : String?, view: UIView) -> MBProgressHUD {
     
     let hud = MBProgressHUD.showAdded(to: view, animated: true)
     hud.label.textColor = UIColor.colorWithHexString("7f7f7f");
@@ -24,12 +24,12 @@ class HUDTool: NSObject {
     hud.label.text = text
     hud.margin = 30.0
     hud.removeFromSuperViewOnHide = true
+    return hud
     
   }
-  class func hideTextHUD() {
-    
-    
-  
+  func showTextHud(text:String?, view:UIView,afterDelay:TimeInterval) {
+    let hud = self.showTextHUD(text: text, view: view)
+    hud.hide(animated: true, afterDelay: afterDelay)
   }
-  
+ 
 }
