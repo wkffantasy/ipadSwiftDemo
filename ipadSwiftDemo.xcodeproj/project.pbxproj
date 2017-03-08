@@ -33,6 +33,7 @@
 		9A5718DA1E68025500267860 /* HomeOverdueController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5718D91E68025500267860 /* HomeOverdueController.swift */; };
 		9A5718DC1E6802B100267860 /* TabsSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5718DB1E6802B100267860 /* TabsSelectView.swift */; };
 		9A5C7BA31E6E4EE600F0DD2A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5C7BA21E6E4EE600F0DD2A /* Constants.swift */; };
+		9A6E4F771E6EBA5B00040E3E /* TimeTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6E4F761E6EBA5B00040E3E /* TimeTool.swift */; };
 		9A76C7111E6A993E006414D0 /* DownloadToolManage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A76C7101E6A993E006414D0 /* DownloadToolManage.swift */; };
 		9AF410EB1E6D09CE009B45FC /* NetWorkManage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF410EA1E6D09CE009B45FC /* NetWorkManage.swift */; };
 		9AF410ED1E6D0A5B009B45FC /* ApiConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF410EC1E6D0A5B009B45FC /* ApiConstant.swift */; };
@@ -89,6 +90,7 @@
 		9A5718D91E68025500267860 /* HomeOverdueController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeOverdueController.swift; sourceTree = "<group>"; };
 		9A5718DB1E6802B100267860 /* TabsSelectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabsSelectView.swift; sourceTree = "<group>"; };
 		9A5C7BA21E6E4EE600F0DD2A /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		9A6E4F761E6EBA5B00040E3E /* TimeTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeTool.swift; sourceTree = "<group>"; };
 		9A76C7101E6A993E006414D0 /* DownloadToolManage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadToolManage.swift; sourceTree = "<group>"; };
 		9AF410EA1E6D09CE009B45FC /* NetWorkManage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetWorkManage.swift; sourceTree = "<group>"; };
 		9AF410EC1E6D0A5B009B45FC /* ApiConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiConstant.swift; sourceTree = "<group>"; };
@@ -227,6 +229,7 @@
 				9AF410EC1E6D0A5B009B45FC /* ApiConstant.swift */,
 				9AF410EE1E6D389A009B45FC /* HUDTool.swift */,
 				9A5C7BA21E6E4EE600F0DD2A /* Constants.swift */,
+				9A6E4F761E6EBA5B00040E3E /* TimeTool.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -527,6 +530,7 @@
 				9A2A4CE51E6576FD0057B4F2 /* LiveController.swift in Sources */,
 				9A2A4CCD1E6518E90057B4F2 /* ViewController.swift in Sources */,
 				9A2A4CD31E65232B0057B4F2 /* UIColor+extension.swift in Sources */,
+				9A6E4F771E6EBA5B00040E3E /* TimeTool.swift in Sources */,
 				9A2A4CD51E6523E50057B4F2 /* NSString+extension.swift in Sources */,
 				9A5718D41E6801F500267860 /* HomeAllController.swift in Sources */,
 				9A2A4CE11E6576D80057B4F2 /* HomeController.swift in Sources */,

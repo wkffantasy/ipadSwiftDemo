@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DownloadToolManage: NSObject,URLSessionDownloadDelegate {
+class DownloadToolManage: NSObject, URLSessionDownloadDelegate {
 
     // 进度的String 22.0%  剩余时间的String 04:46 速度的String 300KB/s
     typealias DownloadingProgress = (String, String, String) -> Void
@@ -24,8 +24,8 @@ class DownloadToolManage: NSObject,URLSessionDownloadDelegate {
     var downloadUrl: String?
     var toSavePath: String?
     var session: URLSession?
-    var downloadTask :URLSessionDownloadTask?
-    var downloadDate : Date?
+    var downloadTask: URLSessionDownloadTask?
+    var downloadDate: Date?
 
     override init() {
         super.init()
@@ -53,7 +53,6 @@ class DownloadToolManage: NSObject,URLSessionDownloadDelegate {
 
         startDownload()
     }
-  
 
     func startDownload() {
         print("this func is startDownload")
@@ -63,57 +62,74 @@ class DownloadToolManage: NSObject,URLSessionDownloadDelegate {
         let request = URLRequest(url: URL(string: self.downloadUrl!)!)
         downloadTask = self.session?.downloadTask(with: request)
         downloadTask?.resume()
-  
-    }
-  //暂停
-  func pauseDownload() {
-    self.downloadTask?.suspend()
-  }
-  //继续
-  func goonDownload() {
-    self.downloadTask?.resume()
-  }
-  //取消
-  func cancelDownload() {
-    self.downloadTask?.cancel()
-  }
-  
-  //下载出错
-  func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
-    print("error ==",error)
-  }
-  
-  //下载完成
-  func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
-    print("location ==",location)
-  }
-  //监听下载进度的方法
-  func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didWriteData bytesWritten: Int64, totalBytesWritten: Int64, totalBytesExpectedToWrite: Int64) {
-    
-    let  progress = CGFloat(totalBytesWritten) / CGFloat(totalBytesExpectedToWrite)
-    var progressString:String
-    if progress == 1 {
-      progressString = "100%"
-    } else {
-      progressString = String(format:"%.2f",progress*100) + "%"
-    }
-    
-    let timeInterval : TimeInterval  = Date().timeIntervalSince(self.downloadDate!)
-    let speed  = CGFloat.init(totalBytesWritten) / CGFloat(timeInterval)
-    print("speed ==",speed)
-    
-    let remainingBytes = totalBytesExpectedToWrite - totalBytesWritten
-    let remainingTime = CGFloat(remainingBytes) / CGFloat(speed)
-    print("remainingTime ==",remainingTime)
-    
-    DispatchQueue.main.async {
-      
-      if self.progressBlock != nil {
-        self.progressBlock!(progressString,"\(remainingTime)","\(speed)")
-      }
-      
     }
 
+    // 暂停
+    func pauseDownload() {
+        self.downloadTask?.suspend()
+    }
+
+    // 继续
+    func goonDownload() {
+        self.downloadTask?.resume()
+    }
+
+    // 取消
+    func cancelDownload() {
+        self.downloadTask?.cancel()
+    }
+
+    // 下载出错
+    func urlSession(_: URLSession, task _: URLSessionTask, didCompleteWithError error: Error?) {
+        print("error ==", error)
+    }
+
+    // 下载完成
+    func urlSession(_: URLSession, downloadTask _: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
+        print("location ==", location)
+    }
+
+    // 监听下载进度的方法
+    func urlSession(_: URLSession, downloadTask _: URLSessionDownloadTask, didWriteData _: Int64, totalBytesWritten: Int64, totalBytesExpectedToWrite: Int64) {
+
+        let progress = CGFloat(totalBytesWritten) / CGFloat(totalBytesExpectedToWrite)
+        var progressString: String
+        if progress == 1 {
+            progressString = "100%"
+        } else {
+            progressString = String(format: "%.2f", progress * 100) + "%"
+        }
+
+        let timeInterval: TimeInterval = Date().timeIntervalSince(self.downloadDate!)
+      
+        let speed = CGFloat(totalBytesWritten) / CGFloat(timeInterval)
+        print("speed ==", speed)
+      let speedString = self.convertBytesToUnit(bytes: speed) + "/s"
+
+        let remainingBytes = totalBytesExpectedToWrite - totalBytesWritten
+        let remainingTimeFloat = CGFloat(remainingBytes) / CGFloat(speed)
+        let remainingTime = TimeTool.tool.convertTimeIntToTimeString(time: Int64(remainingTimeFloat))
+
+        DispatchQueue.main.async {
+
+            if self.progressBlock != nil {
+                self.progressBlock!(progressString, remainingTime, speedString)
+            }
+        }
+    }
+  
+  func convertBytesToUnit(bytes :CGFloat ) -> String {
+    
+    let remainM = bytes / (1024*1024)
+    let remainKB = bytes / 1024
+    var unitString :String
+    if  remainM > 1 {
+      unitString = String(format: "%.1fM",remainM)
+    } else {
+      unitString = String(format: "%.1fKB",remainKB)
+    }
+    return unitString
+    
   }
- 
+  
 }
