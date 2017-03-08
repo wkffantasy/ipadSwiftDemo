@@ -27,9 +27,9 @@ class LiveController: UIViewController {
     var url5 = "http://media7.smartstudy.com/pd/videos/2015/af/c7/16040/mp4/dest.m3u8"
     let url6 = "http://media7.smartstudy.com/pd/videos/2015/3e/5a/16041/mp4/dest.m3u8"
     let url7 = "http://v.smartstudy.com/pd/videos/2015/67/df/10422/mp4/dest.m3u8"
-  
+
     let url8 = "http://dldir1.qq.com/qqfile/QQforMac/QQ_V4.2.4.dmg"
-  
+
     let url9 = "http://120.25.226.186:32812/resources/videos/minion_01.mp4"
 
     var downloadTool: DownloadToolManage!
@@ -136,7 +136,7 @@ class LiveController: UIViewController {
     func clickToDownload(button _: UIButton) {
         print("clickToDownlod")
 
-      let progressBlock = { (progress: String, remainTime: String, speed: String) in
+        let progressBlock = { (progress: String, remainTime: String, speed: String) in
             print("progressBlock")
             self.labelRemainTime.text = "剩余时间:" + remainTime
             self.labelSpeed.text = "速度:" + speed
@@ -148,9 +148,9 @@ class LiveController: UIViewController {
         let failedBlock = { (error: Error) in
             print("failedBlock error==", error)
         }
-      
-      let filePath = PathAndVideoNameTool.tool.videoConverUrlToPath(urlString: url9)
-      
+
+        let filePath = PathAndVideoNameTool.tool.videoConverUrlToPath(urlString: url9)
+
         downloadTool = DownloadToolManage()
         downloadTool.downloadVideoFiles(downloadUrl: url9, toSavePath: filePath as String, progressBlock: progressBlock, completeBlock: completeBlock, failedBlock: failedBlock)
     }
