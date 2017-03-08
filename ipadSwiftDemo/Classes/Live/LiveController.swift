@@ -18,6 +18,7 @@ class LiveController: UIViewController {
     var url5 = "http://media7.smartstudy.com/pd/videos/2015/af/c7/16040/mp4/dest.m3u8"
     let url6 = "http://media7.smartstudy.com/pd/videos/2015/3e/5a/16041/mp4/dest.m3u8"
     let url7 = "http://v.smartstudy.com/pd/videos/2015/67/df/10422/mp4/dest.m3u8"
+  
     let url8 = "http://dldir1.qq.com/qqfile/QQforMac/QQ_V4.2.4.dmg"
 
     var downloadTool: DownloadToolManage!
@@ -136,8 +137,11 @@ class LiveController: UIViewController {
         let failedBlock = { (error: Error) in
             print("failedBlock error==", error)
         }
+      
+      let filePath = PathAndVideoNameTool.tool.videoConverUrlToPath(urlString: url6)
+      
         downloadTool = DownloadToolManage()
-        downloadTool.downloadVideoFiles(downloadUrl: url8, toSavePath: "asd", progressBlock: progressBlock, completeBlock: completeBlock, failedBlock: failedBlock)
+        downloadTool.downloadVideoFiles(downloadUrl: url6, toSavePath: filePath as String, progressBlock: progressBlock, completeBlock: completeBlock, failedBlock: failedBlock)
     }
 
     func setupLabel() -> UILabel {
@@ -147,19 +151,5 @@ class LiveController: UIViewController {
         label.backgroundColor = UIColor.brown
         self.view.addSubview(label)
         return label
-    }
-
-    func changeUrlStringToName(urlString: String) -> String {
-
-        var name = urlString.subStringTo(to: (urlString.length - 14))
-        if name.hasPrefix("http://") {
-            name = name.SubStringFrom(from: 7)
-        }
-
-        let newName = name.replacingOccurrences(of: "/", with: "~") + ".mp4"
-
-        print("name == \(name)")
-        print("newName ==\(newName)")
-        return newName
     }
 }

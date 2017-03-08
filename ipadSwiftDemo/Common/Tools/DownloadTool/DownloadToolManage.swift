@@ -8,6 +8,19 @@
 
 import UIKit
 
+public enum DownloadState : Int {
+  
+  case Downloading
+  
+  case Pause
+  
+  case NotBegan
+  
+  case Compeleted
+  
+  case Failed
+}
+
 class DownloadToolManage: NSObject, URLSessionDownloadDelegate {
 
     // 进度的String 22.0%  剩余时间的String 04:46 速度的String 300KB/s
@@ -21,11 +34,14 @@ class DownloadToolManage: NSObject, URLSessionDownloadDelegate {
     public var completeBlock: DownloadedComplete?
     public var failed: DownloadedFailed?
 
+    var downloadState = DownloadState.NotBegan
     var downloadUrl: String?
     var toSavePath: String?
     var session: URLSession?
     var downloadTask: URLSessionDownloadTask?
     var downloadDate: Date?
+    //断点续传
+    var resumeData:NSData?
 
     override init() {
         super.init()
@@ -52,26 +68,54 @@ class DownloadToolManage: NSObject, URLSessionDownloadDelegate {
         self.downloadDate = Date()
 
         startDownload()
+
     }
 
     func startDownload() {
         print("this func is startDownload")
         // 检查：根据这个url去目录搜索是否已经下载好这个file了
+        let exist = FileManager.default.fileExists(atPath: self.toSavePath!)
+      if exist == true {
+        if self.completeBlock != nil {
+          self.completeBlock!(self.toSavePath!)
+        }
+        return
+      }
+        // 检查：根据这个url去目录搜索是否有 resumeData存在
+      
 
         // 开始下载
         let request = URLRequest(url: URL(string: self.downloadUrl!)!)
         downloadTask = self.session?.downloadTask(with: request)
         downloadTask?.resume()
+        self.downloadState = DownloadState.Downloading
     }
 
     // 暂停
     func pauseDownload() {
-        self.downloadTask?.suspend()
+      if self.downloadState == DownloadState.Downloading {
+        
+        self.downloadTask?.cancel(byProducingResumeData: { (data) in
+          self.resumeData = data as NSData?
+        })
+        self.downloadState = DownloadState.Pause
+        
+      }
+      
     }
 
     // 继续
     func goonDownload() {
-        self.downloadTask?.resume()
+    
+      if self.downloadState == DownloadState.Pause {
+        
+        self.downloadTask = self.session?.downloadTask(withResumeData: self.resumeData as! Data)
+        downloadTask?.resume()
+        self.resumeData = nil
+        self.downloadState = DownloadState.Downloading
+        
+      }
+      
     }
 
     // 取消
@@ -87,6 +131,21 @@ class DownloadToolManage: NSObject, URLSessionDownloadDelegate {
     // 下载完成
     func urlSession(_: URLSession, downloadTask _: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
         print("location ==", location)
+      print("location.path ==",location.path)
+      
+      
+      let fileMan = FileManager.default
+      do{
+        try fileMan.copyItem(atPath: location.path, toPath: self.toSavePath! as String)
+      } catch {
+        
+      }
+      self.downloadState = DownloadState.Compeleted
+      if self.completeBlock != nil {
+        self.completeBlock!(self.toSavePath!)
+      }
+      
+      self.session?.finishTasksAndInvalidate()
     }
 
     // 监听下载进度的方法
@@ -104,7 +163,7 @@ class DownloadToolManage: NSObject, URLSessionDownloadDelegate {
       
         let speed = CGFloat(totalBytesWritten) / CGFloat(timeInterval)
         print("speed ==", speed)
-      let speedString = self.convertBytesToUnit(bytes: speed) + "/s"
+        let speedString = self.convertBytesToUnit(bytes: speed) + "/s"
 
         let remainingBytes = totalBytesExpectedToWrite - totalBytesWritten
         let remainingTimeFloat = CGFloat(remainingBytes) / CGFloat(speed)
