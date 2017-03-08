@@ -24,7 +24,7 @@ class PathAndVideoNameTool: NSObject {
     name = name.replacingOccurrences(of: "/", with: "")
     name = name.replacingOccurrences(of: ":", with: "")
     name = name.replacingOccurrences(of: ".", with: "")
-    name = name + ".mp4"
+    name = "video" + name + ".mp4"
   
     print("name == \(name)")
     
@@ -41,7 +41,6 @@ class PathAndVideoNameTool: NSObject {
     return filePath as String
 
   }
-  
   
   func audioConverUrlToName(urlString:String) -> String {
     assert(urlString.length > 0, "")
