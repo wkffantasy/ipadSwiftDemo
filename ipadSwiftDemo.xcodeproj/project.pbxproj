@@ -29,6 +29,7 @@
 		9A2A4CED1E6577490057B4F2 /* BrieflyTeachController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2A4CEC1E6577490057B4F2 /* BrieflyTeachController.swift */; };
 		9A4923401E6FDEB600B46227 /* PathAndVideoNameTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A49233F1E6FDEB600B46227 /* PathAndVideoNameTool.swift */; };
 		9A4923441E6FFAFA00B46227 /* HomeAllViewCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4923431E6FFAFA00B46227 /* HomeAllViewCellTableViewCell.swift */; };
+		9A4923461E700CD400B46227 /* CurveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4923451E700CD400B46227 /* CurveView.swift */; };
 		9A5718D41E6801F500267860 /* HomeAllController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5718D31E6801F500267860 /* HomeAllController.swift */; };
 		9A5718D61E68020C00267860 /* HomeStudyingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5718D51E68020C00267860 /* HomeStudyingController.swift */; };
 		9A5718D81E68022A00267860 /* HomeNotStartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5718D71E68022A00267860 /* HomeNotStartController.swift */; };
@@ -88,6 +89,7 @@
 		9A2A4CEC1E6577490057B4F2 /* BrieflyTeachController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrieflyTeachController.swift; sourceTree = "<group>"; };
 		9A49233F1E6FDEB600B46227 /* PathAndVideoNameTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathAndVideoNameTool.swift; sourceTree = "<group>"; };
 		9A4923431E6FFAFA00B46227 /* HomeAllViewCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeAllViewCellTableViewCell.swift; sourceTree = "<group>"; };
+		9A4923451E700CD400B46227 /* CurveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurveView.swift; sourceTree = "<group>"; };
 		9A5718D31E6801F500267860 /* HomeAllController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeAllController.swift; sourceTree = "<group>"; };
 		9A5718D51E68020C00267860 /* HomeStudyingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeStudyingController.swift; sourceTree = "<group>"; };
 		9A5718D71E68022A00267860 /* HomeNotStartController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeNotStartController.swift; sourceTree = "<group>"; };
@@ -318,6 +320,7 @@
 			isa = PBXGroup;
 			children = (
 				9A5718DB1E6802B100267860 /* TabsSelectView.swift */,
+				9A4923451E700CD400B46227 /* CurveView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -538,6 +541,7 @@
 				9A2A4CCD1E6518E90057B4F2 /* ViewController.swift in Sources */,
 				9A2A4CD31E65232B0057B4F2 /* UIColor+extension.swift in Sources */,
 				9A6E4F771E6EBA5B00040E3E /* TimeTool.swift in Sources */,
+				9A4923461E700CD400B46227 /* CurveView.swift in Sources */,
 				9A2A4CD51E6523E50057B4F2 /* NSString+extension.swift in Sources */,
 				9A5718D41E6801F500267860 /* HomeAllController.swift in Sources */,
 				9A2A4CE11E6576D80057B4F2 /* HomeController.swift in Sources */,
