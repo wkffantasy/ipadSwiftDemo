@@ -109,7 +109,7 @@ class TabsSelectView: UIView {
 
             let thisImage = UIImage.init(named: imageName)
             let button = UIButton(type: .custom)
-            button.setImage(thisImage, for: UIControlState.normal)
+            button.setImage(thisImage, for: .normal)
             button.tag = tag
             button.addTarget(self, action: #selector(clickButtonWithoutImage(button:)), for: UIControlEvents.touchUpInside)
             self.addSubview(button)
@@ -129,7 +129,7 @@ class TabsSelectView: UIView {
             if tag == 0 {
                 selectButton = button
                 let selectImage = self.imageSelectArray?[tag]
-                selectButton.setImage(UIImage.init(named: selectImage!), for: UIControlState.normal)
+                selectButton.setImage(UIImage.init(named: selectImage!), for: .normal)
             }
             tag += 1
             lastOne = button
@@ -147,8 +147,8 @@ class TabsSelectView: UIView {
             button.setTitleColor(self.normalColor, for: UIControlState.normal)
             button.tag = tag
             button.titleLabel?.font = UIFont.systemFont(ofSize: 15)
-            button.addTarget(self, action: #selector(clickButtonWithoutImage(button:)), for: UIControlEvents.touchUpInside)
-            self.addSubview(button)
+            button.addTarget(self, action: #selector(clickButtonWithoutImage(button:)), for: .touchUpInside)
+            addSubview(button)
             buttonsArray.append(button)
             button.snp.makeConstraints({ make in
                 make.top.bottom.equalTo(0)
@@ -179,6 +179,7 @@ class TabsSelectView: UIView {
         } else {
             self.setupButtonsWithTitles()
         }
+        
         // lines
         dividingLine = UIView.init()
         self.addSubview(dividingLine)
@@ -191,9 +192,9 @@ class TabsSelectView: UIView {
         addLineViews()
     }
 
-    func makeMovingLine() {
-        assert(self.selectButton != nil, "must have one select button")
-    }
+//    func makeMovingLine() {
+//        assert(self.selectButton != nil, "must have one select button")
+//    }
 
     func addLineViews() {
         if movingLine != nil {

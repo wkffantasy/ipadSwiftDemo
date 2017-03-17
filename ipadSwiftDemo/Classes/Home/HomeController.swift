@@ -52,9 +52,9 @@ class HomeController: UIViewController, UIScrollViewDelegate {
             make.top.left.right.equalTo(0)
             make.height.equalTo(40)
         }
-        tabsSelectView.clickButtonBlock = { (tag: Int) in
+        tabsSelectView.clickButtonBlock = { [weak self](tag: Int) in
             print("in controller,click button,the tag is \(tag)")
-            self.letItScroll(tag: tag)
+            self?.letItScroll(tag: tag)
         }
 
         vcScrollView = UIScrollView.init()
@@ -68,7 +68,7 @@ class HomeController: UIViewController, UIScrollViewDelegate {
             make.bottom.right.left.equalTo(0)
         }
 
-        let containerView = UIView.init()
+        let containerView = UIView()
         vcScrollView.addSubview(containerView)
         containerView.snp.makeConstraints { make in
             make.edges.equalTo(vcScrollView)
