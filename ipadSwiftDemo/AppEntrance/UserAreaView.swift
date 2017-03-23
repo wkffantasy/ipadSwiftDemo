@@ -21,14 +21,12 @@ class UserAreaView: UIView {
     var titleLabel: UILabel!
     var vacateButton: UIButton!
     var signButton: UIButton!
-
     var vacateBlock: VacateBlock?
     var signUpBlock: SignUpBlock?
 
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = UIColor.colorWithRGB(red: 69, green: 81, blue: 138)
-
         setupViews()
     }
 
@@ -53,7 +51,6 @@ class UserAreaView: UIView {
     }
 
     func setupViews() {
-
         userIconView = UIImageView()
         addSubview(userIconView)
         userIconView.image = UIImage.init(named: "dog")
@@ -63,13 +60,11 @@ class UserAreaView: UIView {
         userIconView.layer.borderWidth = 3.0
         userIconView.layer.borderColor = UIColor.white.cgColor
         userIconView.snp.makeConstraints { make in
-
             make.left.equalTo(80)
             make.width.equalTo(iconImageWH)
             make.height.equalTo(iconImageWH)
             make.centerY.equalTo(self.snp.centerY)
         }
-
         titleLabel = UILabel()
         addSubview(titleLabel)
         titleLabel.textColor = UIColor.white
@@ -78,11 +73,9 @@ class UserAreaView: UIView {
         titleLabel.text = "\(userName),下午好,\n今天的学习任务完成了吗"
         titleLabel.numberOfLines = 0
         titleLabel.snp.makeConstraints { make in
-
             make.left.equalTo(userIconView.snp.right).offset(20)
             make.centerY.equalTo(userIconView.snp.centerY)
         }
-
         // this two method is invalidaty
         //    vacateButton.titleLabel?.text = "请假"
         //    vacateButton.titleLabel?.textColor=UIColor.black
@@ -96,13 +89,11 @@ class UserAreaView: UIView {
         signButton.addTarget(self, action: #selector(clickSignButton), for: UIControlEvents.touchUpInside)
         addSubview(signButton)
         signButton.snp.makeConstraints { make in
-
             make.width.equalTo(buttonW)
             make.height.equalTo(buttonH)
             make.centerY.equalTo(userIconView.snp.centerY)
             make.right.equalTo(-80)
         }
-
         vacateButton = UIButton(type: .custom)
         vacateButton.titleLabel?.font = UIFont.systemFont(ofSize: 14)
         vacateButton.setTitle("请假", for: UIControlState.normal)
@@ -115,7 +106,6 @@ class UserAreaView: UIView {
         vacateButton.addTarget(self, action: #selector(clickVacateButton), for: UIControlEvents.touchUpInside)
         addSubview(vacateButton)
         vacateButton.snp.makeConstraints { make in
-
             make.width.equalTo(buttonW)
             make.height.equalTo(buttonH)
             make.centerY.equalTo(self.snp.centerY)

@@ -12,14 +12,11 @@ class TabsSelectView: UIView {
 
     let buttonW = 100
     typealias ClickButtonBlock = (Int) -> Void
-
     var titleArray: Array<String>?
     var selectColor: UIColor?
     var normalColor: UIColor?
-
     var imageNormalArray: Array<String>?
     var imageSelectArray: Array<String>?
-
     var scrollView: UIScrollView!
     var selectButton: UIButton!
     var dividingLine: UIView!
@@ -38,7 +35,6 @@ class TabsSelectView: UIView {
 
     // public
     init(titleArray: Array<String>, frame: CGRect, selectColor: UIColor, normalColor: UIColor) {
-
         super.init(frame: frame)
         assert(titleArray.count > 0, "this array should not be empty")
         self.titleArray = titleArray
@@ -72,7 +68,6 @@ class TabsSelectView: UIView {
 
     func clickButtonWithoutImage(button: UIButton) {
         print("button.tag == \(button.tag)")
-
         self.changeButtonState(button: button)
         if self.clickButtonBlock != nil {
             self.clickButtonBlock!(self.selectButton.tag)
@@ -89,24 +84,18 @@ class TabsSelectView: UIView {
             self.selectButton.setImage(thisNormalImage, for: UIControlState.normal)
             self.selectButton = button
             self.selectButton.setImage(thisSeletImage, for: UIControlState.normal)
-
         } else {
-
             self.selectButton.setTitleColor(self.normalColor, for: UIControlState.normal)
             self.selectButton = button
             self.selectButton.setTitleColor(self.selectColor, for: UIControlState.normal)
         }
-
         self.addLineViews()
     }
 
     func setupButtonsWithImages() {
-
         var lastOne: UIButton?
         var tag = 0
-
         for imageName in self.imageNormalArray! {
-
             let thisImage = UIImage.init(named: imageName)
             let button = UIButton(type: .custom)
             button.setImage(thisImage, for: .normal)
@@ -139,9 +128,7 @@ class TabsSelectView: UIView {
     func setupButtonsWithTitles() {
         var lastOne: UIButton?
         var tag = 0
-
         for title in self.titleArray! {
-
             let button = UIButton(type: .custom)
             button.setTitle(title, for: UIControlState.normal)
             button.setTitleColor(self.normalColor, for: UIControlState.normal)
@@ -172,14 +159,12 @@ class TabsSelectView: UIView {
     }
 
     func setupViews() {
-
         // all buttons
         if self.haveImages == true {
             self.setupButtonsWithImages()
         } else {
             self.setupButtonsWithTitles()
         }
-        
         // lines
         dividingLine = UIView.init()
         self.addSubview(dividingLine)
@@ -192,9 +177,9 @@ class TabsSelectView: UIView {
         addLineViews()
     }
 
-//    func makeMovingLine() {
-//        assert(self.selectButton != nil, "must have one select button")
-//    }
+    //    func makeMovingLine() {
+    //        assert(self.selectButton != nil, "must have one select button")
+    //    }
 
     func addLineViews() {
         if movingLine != nil {

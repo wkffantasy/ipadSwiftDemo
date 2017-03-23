@@ -63,11 +63,9 @@ extension String {
      */
 
     func subString(start: Int, end: Int = 0) -> String {
-
         let startIndex = self.index(self.startIndex, offsetBy: start)
         let endIndex = self.index(self.endIndex, offsetBy: end > 0 ? end - self.length : end)
         let range = Range<String.Index>(startIndex ..< endIndex)
-
         return self.substring(with: range)
     }
 
@@ -77,7 +75,6 @@ extension String {
      number: 截取的个数
      */
     func subString(start: Int, length: Int) -> String {
-
         if start > 0 {
             let startIndex = self.index(self.startIndex, offsetBy: start)
             let endIndex = self.index(self.startIndex, offsetBy: length + start)
@@ -96,7 +93,6 @@ extension String {
 
      */
     func subStringTo(to: Int) -> String {
-
         let endIndex = to > 0 ? self.index(self.startIndex, offsetBy: to) : self.index(self.endIndex, offsetBy: to)
         return self.substring(to: endIndex)
     }
@@ -163,7 +159,6 @@ extension String {
      */
 
     func containsStringWithOtherStr(str: String) -> Bool {
-
         if self == str {
             return true
         }

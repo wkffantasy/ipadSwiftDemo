@@ -61,7 +61,6 @@ class NetWorkManage: NSObject {
             HTTP.globalRequest { req in
                 req.timeoutInterval = newSecond! // 设置超时时间
             }
-
             let net = try HTTP.POST(url, parameters: parameters, headers: nil)
             net.start { response in
                 if let err = response.error {
@@ -100,7 +99,6 @@ class NetWorkManage: NSObject {
     private func doCallBack(successBlock: HttpSuccess? = nil, failedBlock: HttpFailure? = nil, message: Any) {
 
         if successBlock != nil {
-
             var retDic: [String: Any]!
             do {
                 let object: Any = try JSONSerialization.jsonObject(with: message as! Data, options: .allowFragments)
@@ -114,7 +112,6 @@ class NetWorkManage: NSObject {
                 print("occur error", message)
                 retDic = ["code": -1, "msg": "网络超时，请刷新重试！"]
             }
-
             // 刷新主线程UI
             DispatchQueue.main.async {
                 successBlock?(retDic as [String: AnyObject])

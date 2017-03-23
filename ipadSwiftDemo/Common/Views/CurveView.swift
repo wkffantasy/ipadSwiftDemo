@@ -25,13 +25,11 @@ class CurveView: UIView {
     }
 
     public func updateMaxHeight(thisHeight: CGFloat) {
-
         self.thisHeight = thisHeight
         self.layoutIfNeeded()
     }
 
     override func draw(_: CGRect) {
-
         let path = UIBezierPath.init()
         path.move(to: .zero)
         path.addQuadCurve(to: CGPoint(x: self.frame.size.width, y: 0), controlPoint: CGPoint(x: self.frame.size.width / 2, y: thisHeight))

@@ -17,8 +17,6 @@ class HomeAllController: UIViewController, UITableViewDataSource, UITableViewDel
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.yellow
-
-        // Do any additional setup after loading the view.
         initData()
         setupViews()
     }
@@ -75,7 +73,6 @@ class HomeAllController: UIViewController, UITableViewDataSource, UITableViewDel
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey: Any]?, context: UnsafeMutableRawPointer?) {
 
         if keyPath == "contentOffset" {
-
             let currentPoint = self.tableView.contentOffset
             var currentY: CGFloat = currentPoint.y
             if currentY > curveMaxHeight {
@@ -84,15 +81,12 @@ class HomeAllController: UIViewController, UITableViewDataSource, UITableViewDel
                 currentY = 0
             }
             currentY = curveMaxHeight - currentY
-
             self.curve.updateMaxHeight(thisHeight: currentY)
             curve.snp.remakeConstraints({ make in
                 make.top.left.right.equalTo(0)
                 make.height.equalTo(currentY / 2)
             })
-
         } else {
-
             super.observeValue(forKeyPath: keyPath, of: object, change: change, context: context)
         }
     }
@@ -102,10 +96,8 @@ class HomeAllController: UIViewController, UITableViewDataSource, UITableViewDel
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
         let cell: HomeAllViewCellTableViewCell = HomeAllViewCellTableViewCell.cellWithTableView(tableView: tableView) as! HomeAllViewCellTableViewCell
         cell.updateContent(songName: self.dataSourceArray[indexPath.row])
-
         return cell
     }
 

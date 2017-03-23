@@ -16,12 +16,7 @@ class CheckController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         self.view.backgroundColor = UIColor.randomColor()
-        // Do any additional setup after loading the view.
-        self.view.backgroundColor = UIColor.randomColor()
-        // Do any additional setup after loading the view.
-
         let showTextButton = UIButton(type: .custom)
         showTextButton.backgroundColor = UIColor.randomColor()
         showTextButton.setTitle("展示文字HUD", for: UIControlState.normal)
@@ -33,7 +28,6 @@ class CheckController: UIViewController {
             make.width.equalTo(200)
             make.height.equalTo(40)
         }
-
         //      let hideTextButton = UIButton(type: .custom)
         //      hideTextButton.backgroundColor = UIColor.randomColor()
         //      hideTextButton.setTitle("隐藏文字HUD", for: UIControlState.normal)
@@ -85,7 +79,6 @@ class CheckController: UIViewController {
             make.width.equalTo(200)
             make.height.equalTo(40)
         }
-
         //      let showSomeTimeImageButton = UIButton(type: .custom)
         //      showSomeTimeImageButton.backgroundColor = UIColor.randomColor()
         //      showSomeTimeImageButton.setTitle("展示图片2秒", for: UIControlState.normal)
@@ -103,10 +96,8 @@ class CheckController: UIViewController {
     }
 
     func recieveNotification(param: Notification) {
-
         let currentTag = param.userInfo?["currentTag"]
         print("currentTag == \(currentTag)")
-
         self.clickToHideImage()
         self.clickToHideText()
     }

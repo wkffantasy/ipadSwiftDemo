@@ -12,9 +12,7 @@ class HomeAllViewCellTableViewCell: UITableViewCell {
 
     var songNameLabel: UILabel!
 
-    //
     class func cellWithTableView(tableView: UITableView) -> AnyObject {
-
         let cellId = "HomeAllViewCellTableViewCell"
         var cell = tableView.dequeueReusableCell(withIdentifier: cellId)
         if cell == nil {
@@ -29,7 +27,6 @@ class HomeAllViewCellTableViewCell: UITableViewCell {
 
     private override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-
         self.backgroundColor = UIColor.white
         self.selectionStyle = UITableViewCellSelectionStyle.none
         self.setupViews()
@@ -40,7 +37,6 @@ class HomeAllViewCellTableViewCell: UITableViewCell {
     }
 
     private func setupViews() {
-
         songNameLabel = UILabel.init()
         songNameLabel.textColor = UIColor.colorWithHexString("333333")
         songNameLabel.font = UIFont.systemFont(ofSize: 15)

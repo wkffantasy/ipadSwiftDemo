@@ -12,7 +12,6 @@ class LeftListRootView: UIView {
 
     typealias ClickButtonBlock = (Int) -> Void
     let buttonH = 45
-
     let titleSelectColor = UIColor.colorWithRGB(red: 243, green: 243, blue: 243)
     let titleNormalColor = UIColor.colorWithRGB(red: 33, green: 33, blue: 33)
     let selectBackColor = UIColor.colorWithRGB(red: 74, green: 153, blue: 255)
@@ -31,12 +30,10 @@ class LeftListRootView: UIView {
     }
 
     func setupViews() {
-
         // all buttons
         var lastOne: UIView?
         var tag = 0
         for title in self.titlesArray {
-
             let button = UIButton(type: .custom)
             button.setTitleColor(titleNormalColor, for: UIControlState.normal)
             button.backgroundColor = normalBackColor
@@ -68,13 +65,11 @@ class LeftListRootView: UIView {
             }
             lastOne = button
         }
-
         // others
         let lineView = UIView()
         addSubview(lineView)
         lineView.backgroundColor = selectBackColor
         lineView.snp.makeConstraints { make in
-
             make.left.bottom.top.equalTo(0)
             make.width.equalTo(2)
             make.bottom.equalTo((lastOne?.snp.bottom)!)
@@ -83,11 +78,9 @@ class LeftListRootView: UIView {
 
     func clickButton(button: UIButton) {
         print("clickButton and its tag == \(button.tag)")
-
         if button != self.selectButton {
             self.selectButton.setTitleColor(titleNormalColor, for: UIControlState.normal)
             self.selectButton.backgroundColor = normalBackColor
-
             self.selectButton = button
             self.selectButton.backgroundColor = selectBackColor
             self.selectButton.setTitleColor(titleSelectColor, for: UIControlState.normal)
@@ -95,7 +88,6 @@ class LeftListRootView: UIView {
                 self.clickButtonBlock!(self.selectButton.tag)
             }
         }
-
         // send notification
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: kNonificationNameChangeLeftRootVCName), object: nil, userInfo: ["currentTag": button.tag])
     }

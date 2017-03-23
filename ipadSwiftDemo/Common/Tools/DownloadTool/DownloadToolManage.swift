@@ -45,7 +45,6 @@ class DownloadToolManage: NSObject, URLSessionDownloadDelegate {
 
     override init() {
         super.init()
-
         let configuration = URLSessionConfiguration.default
         self.session = URLSession(configuration: configuration, delegate: self, delegateQueue: nil)
     }
@@ -57,7 +56,6 @@ class DownloadToolManage: NSObject, URLSessionDownloadDelegate {
         completeBlock: @escaping DownloadedComplete,
         failedBlock: @escaping DownloadedFailed
     ) {
-
         print("this func is downloadVideoFiles")
         assert(downloadUrl.length > 0, "this url should not be nil")
         self.downloadUrl = downloadUrl
@@ -66,7 +64,6 @@ class DownloadToolManage: NSObject, URLSessionDownloadDelegate {
         self.completeBlock = completeBlock
         self.failed = failedBlock
         self.downloadDate = Date()
-
         startDownload()
     }
 
@@ -81,7 +78,6 @@ class DownloadToolManage: NSObject, URLSessionDownloadDelegate {
             return
         }
         // 检查：根据这个url去目录搜索是否有 resumeData存在
-
         // 开始下载
         let request = URLRequest(url: URL(string: self.downloadUrl!)!)
         downloadTask = self.session?.downloadTask(with: request)
@@ -92,7 +88,6 @@ class DownloadToolManage: NSObject, URLSessionDownloadDelegate {
     // 暂停
     func pauseDownload() {
         if self.downloadState == DownloadState.Downloading {
-
             self.downloadTask?.cancel(byProducingResumeData: { data in
                 self.resumeData = data as NSData?
             })
@@ -102,9 +97,7 @@ class DownloadToolManage: NSObject, URLSessionDownloadDelegate {
 
     // 继续
     func goonDownload() {
-
         if self.downloadState == DownloadState.Pause {
-
             self.downloadTask = self.session?.downloadTask(withResumeData: self.resumeData as! Data)
             downloadTask?.resume()
             self.resumeData = nil
@@ -126,7 +119,6 @@ class DownloadToolManage: NSObject, URLSessionDownloadDelegate {
     func urlSession(_: URLSession, downloadTask _: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
         print("location ==", location)
         print("location.path ==", location.path)
-
         let fileMan = FileManager.default
         do {
             try fileMan.copyItem(atPath: location.path, toPath: self.toSavePath! as String)
@@ -136,13 +128,11 @@ class DownloadToolManage: NSObject, URLSessionDownloadDelegate {
         if self.completeBlock != nil {
             self.completeBlock!(self.toSavePath!)
         }
-
         self.session?.finishTasksAndInvalidate()
     }
 
     // 监听下载进度的方法
     func urlSession(_: URLSession, downloadTask _: URLSessionDownloadTask, didWriteData _: Int64, totalBytesWritten: Int64, totalBytesExpectedToWrite: Int64) {
-
         let progress = CGFloat(totalBytesWritten) / CGFloat(totalBytesExpectedToWrite)
         var progressString: String
         if progress == 1 {
@@ -150,19 +140,14 @@ class DownloadToolManage: NSObject, URLSessionDownloadDelegate {
         } else {
             progressString = String(format: "%.2f", progress * 100) + "%"
         }
-
         let timeInterval: TimeInterval = Date().timeIntervalSince(self.downloadDate!)
-
         let speed = CGFloat(totalBytesWritten) / CGFloat(timeInterval)
         print("speed ==", speed)
         let speedString = self.convertBytesToUnit(bytes: speed) + "/s"
-
         let remainingBytes = totalBytesExpectedToWrite - totalBytesWritten
         let remainingTimeFloat = CGFloat(remainingBytes) / CGFloat(speed)
         let remainingTime = TimeTool.tool.convertTimeIntToTimeString(time: Int64(remainingTimeFloat))
-
         DispatchQueue.main.async {
-
             if self.progressBlock != nil {
                 self.progressBlock!(progressString, remainingTime, speedString)
             }
@@ -170,7 +155,6 @@ class DownloadToolManage: NSObject, URLSessionDownloadDelegate {
     }
 
     func convertBytesToUnit(bytes: CGFloat) -> String {
-
         let remainM = bytes / (1024 * 1024)
         let remainKB = bytes / 1024
         var unitString: String

@@ -15,19 +15,15 @@ class PathAndVideoNameTool: NSObject {
     // 后缀为m3u8
     func videoConverUrlToName(urlString: String) -> String {
         assert(urlString.length > 0, "")
-
         var name = urlString
         if name.hasPrefix("http://") {
             name = name.SubStringFrom(from: 7)
         }
-
         name = name.replacingOccurrences(of: "/", with: "")
         name = name.replacingOccurrences(of: ":", with: "")
         name = name.replacingOccurrences(of: ".", with: "")
         name = "video" + name + ".mp4"
-
         print("name == \(name)")
-
         return name
     }
 
@@ -38,7 +34,6 @@ class PathAndVideoNameTool: NSObject {
 
         var filePath = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.cachesDirectory, FileManager.SearchPathDomainMask.userDomainMask, true).last! as NSString
         filePath = filePath.appendingPathComponent(self.videoConverUrlToName(urlString: urlString)) as NSString
-
         return filePath as String
     }
 

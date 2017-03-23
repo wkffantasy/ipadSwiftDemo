@@ -13,10 +13,7 @@ class BrieflyTeachController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         self.view.backgroundColor = UIColor.randomColor()
-        // Do any additional setup after loading the view.
-
         let beganGetDataButton = UIButton(type: .custom)
         beganGetDataButton.backgroundColor = UIColor.randomColor()
         beganGetDataButton.setTitle("开始请求无参数的get", for: UIControlState.normal)
@@ -28,7 +25,6 @@ class BrieflyTeachController: UIViewController {
             make.width.equalTo(200)
             make.height.equalTo(40)
         }
-
         let getParamButton = UIButton(type: .custom)
         getParamButton.backgroundColor = UIColor.randomColor()
         getParamButton.setTitle("请求有参数的get", for: UIControlState.normal)
@@ -41,7 +37,6 @@ class BrieflyTeachController: UIViewController {
             make.width.equalTo(200)
             make.height.equalTo(40)
         }
-
         let postButton = UIButton(type: .custom)
         postButton.backgroundColor = UIColor.randomColor()
         postButton.setTitle("请求有参数的post", for: UIControlState.normal)
@@ -54,7 +49,6 @@ class BrieflyTeachController: UIViewController {
             make.width.equalTo(200)
             make.height.equalTo(40)
         }
-
         let uploadButton = UIButton(type: .custom)
         uploadButton.backgroundColor = UIColor.randomColor()
         uploadButton.setTitle("上传一个图片", for: UIControlState.normal)
@@ -86,11 +80,9 @@ class BrieflyTeachController: UIViewController {
         //    hud.margin = 30.0
         //    hud.removeFromSuperViewOnHide = true
         let hud = HUDTool.tool.showTextHUD(text: "上传中...", view: self.view)
-
         let param = [
             "image1": self.getFilePath(fileName: "WechatIMG3", ofType: "jpeg"),
         ]
-
         let urlString = "http://api.test.smartstudy.com/user/avatar/upload?w=300&h=300"
         //     let urlString = "http://api.test.smartstudy.com/user/avatar/upload?w=300&h=300"
         let net = NetWorkManage.manger.uploadFileMethodUrl(url: urlString, filePathDict: param, second: nil, parameters: nil, successBlock: { data in
@@ -104,7 +96,6 @@ class BrieflyTeachController: UIViewController {
     }
 
     func clickToGetData(button _: UIButton) {
-
         // http://dev.smartstudy.com:3100/api/mobile/v3/product/1958
 
         //    let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
@@ -116,7 +107,6 @@ class BrieflyTeachController: UIViewController {
         //    hud.margin = 30.0
         //    hud.removeFromSuperViewOnHide = true
         let hud = HUDTool.tool.showTextHUD(text: "请求中...", view: self.view)
-
         let productId = "1958"
         let urlString = kProductInfoApi + productId
         let net = NetWorkManage.manger.getMethodUrl(url: urlString, second: nil, parameters: nil, successBlock: { data in
@@ -132,11 +122,9 @@ class BrieflyTeachController: UIViewController {
 
     func clickToGetParamButton(button _: UIButton) {
         print("clickToGetParamButton")
-
         // http://dev.smartstudy.com:3100/api/mobile/v3/product/1016
         // token :u3JniMLnENWipLuyCcSre21K6n16wcmQ
         let param = ["token": "u3JniMLnENWipLuyCcSre21K6n16wcmQ"]
-
         //    let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
         //    hud.label.textColor = UIColor.colorWithHexString("7f7f7f");
         //    hud.mode = .text
@@ -145,9 +133,7 @@ class BrieflyTeachController: UIViewController {
         //    hud.label.text = "请求中"
         //    hud.margin = 30.0
         //    hud.removeFromSuperViewOnHide = true
-
         let hud = HUDTool.tool.showTextHUD(text: "请求中...", view: self.view)
-
         let productId = "1958"
         let urlString = kProductInfoApi + productId
         let net = NetWorkManage.manger.getMethodUrl(url: urlString, second: nil, parameters: param, successBlock: { data in
@@ -163,7 +149,6 @@ class BrieflyTeachController: UIViewController {
 
     func clickPostButton(button _: UIButton) {
         print("clickPostButton")
-
         /*
          url = http://test.smartstudy.com/api/slice/13974/progress
          {
@@ -173,14 +158,12 @@ class BrieflyTeachController: UIViewController {
          type = 1;
          }
          */
-
         let param = [
             "token": "siOXWhYQu9EXbgSAYTgnAxSZTSMlFZM0",
             "progress": "1",
             "srvId": "150363",
             "type": "1",
         ]
-
         //    let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
         //    hud.label.textColor = UIColor.colorWithHexString("7f7f7f");
         //    hud.mode = .text
@@ -189,11 +172,8 @@ class BrieflyTeachController: UIViewController {
         //    hud.label.text = "请求中"
         //    hud.margin = 30.0
         //    hud.removeFromSuperViewOnHide = true
-
         let hud = HUDTool.tool.showTextHUD(text: "请求中...", view: self.view)
-
         let urlString = "http://test.smartstudy.com/api/slice/13974/progress"
-
         let net = NetWorkManage.manger.postMethodUrl(url: urlString, second: nil, parameters: param, successBlock: { data in
             print("successBlock data ==", data)
             hud.hide(animated: true)

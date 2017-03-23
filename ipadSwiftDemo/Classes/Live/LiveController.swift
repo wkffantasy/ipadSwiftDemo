@@ -23,14 +23,11 @@ class LiveController: UIViewController {
     let url2 = "http://download.thinkbroadband.com/10MB.zip"
     let url3 = "http://download.thinkbroadband.com/20MB.zip"
     let url4 = "http://download.thinkbroadband.com/30MB.zip"
-
     var url5 = "http://media7.smartstudy.com/pd/videos/2015/af/c7/16040/mp4/dest.m3u8"
     let url6 = "http://media7.smartstudy.com/pd/videos/2015/3e/5a/16041/mp4/dest.m3u8"
     let url7 = "http://v.smartstudy.com/pd/videos/2015/67/df/10422/mp4/dest.m3u8"
-
     let url8 = "http://dldir1.qq.com/qqfile/QQforMac/QQ_V4.2.4.dmg"
-
-    let url9 = "http://120.25.226.186:32812/resources/videos/minion_01.mp4"
+    let url9 = "http://media6.smartstudy.com/e8/4f/91375/2/dest.m3u8"
 
     var downloadTool: DownloadToolManage!
     var labelProgress: UILabel!
@@ -39,10 +36,7 @@ class LiveController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         self.view.backgroundColor = UIColor.white
-        // Do any additional setup after loading the view.
-
         setupViews()
     }
 
@@ -59,7 +53,6 @@ class LiveController: UIViewController {
             make.width.equalTo(100)
             make.height.equalTo(40)
         }
-
         let goonButton = UIButton(type: .custom)
         goonButton.backgroundColor = UIColor.randomColor()
         goonButton.setTitle("继续下载", for: UIControlState.normal)
@@ -72,7 +65,6 @@ class LiveController: UIViewController {
             make.width.equalTo(100)
             make.height.equalTo(40)
         }
-
         let pauseButton = UIButton(type: .custom)
         pauseButton.backgroundColor = UIColor.randomColor()
         pauseButton.setTitle("暂停", for: UIControlState.normal)
@@ -85,7 +77,6 @@ class LiveController: UIViewController {
             make.width.equalTo(100)
             make.height.equalTo(40)
         }
-
         let cancelButton = UIButton(type: .custom)
         cancelButton.backgroundColor = UIColor.randomColor()
         cancelButton.setTitle("取消下载", for: UIControlState.normal)
@@ -98,13 +89,11 @@ class LiveController: UIViewController {
             make.width.equalTo(100)
             make.height.equalTo(40)
         }
-
         labelSpeed = self.setupLabel()
         labelSpeed.snp.makeConstraints { make in
             make.left.equalTo(20)
             make.top.equalTo(pauseButton.snp.bottom).offset(20)
         }
-
         labelProgress = self.setupLabel()
         labelProgress.snp.makeConstraints { make in
             make.left.equalTo(20)
@@ -128,14 +117,12 @@ class LiveController: UIViewController {
     }
 
     func clickToPause(button _: UIButton) {
-
         print("clickToPause")
         self.downloadTool.pauseDownload()
     }
 
     func clickToDownload(button _: UIButton) {
         print("clickToDownlod")
-
         let progressBlock = { (progress: String, remainTime: String, speed: String) in
             print("progressBlock")
             self.labelRemainTime.text = "剩余时间:" + remainTime
@@ -148,9 +135,7 @@ class LiveController: UIViewController {
         let failedBlock = { (error: Error) in
             print("failedBlock error==", error)
         }
-
         let filePath = PathAndVideoNameTool.tool.videoConverUrlToPath(urlString: url9)
-
         downloadTool = DownloadToolManage()
         downloadTool.downloadVideoFiles(downloadUrl: url9, toSavePath: filePath as String, progressBlock: progressBlock, completeBlock: completeBlock, failedBlock: failedBlock)
     }

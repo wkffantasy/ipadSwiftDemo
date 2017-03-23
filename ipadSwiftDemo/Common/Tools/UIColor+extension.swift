@@ -15,7 +15,6 @@ extension UIColor {
      *  @return 随机颜色
      */
     static func randomColor() -> UIColor {
-
         let hue: CGFloat = (CGFloat(arc4random() % 256) / 256.0) //  0.0 to 1.0
         let saturation: CGFloat = (CGFloat(arc4random() % 128) / 256.0) + 0.5 //  0.5 to 1.0, away from white
         let brightness: CGFloat = (CGFloat(arc4random() % 128) / 256.0) + 0.5 //  0.5 to 1.0, away from black
@@ -50,7 +49,6 @@ extension UIColor {
      */
     class func colorWithHexString(_ stringToConvert: String, Alpha: CGFloat = 1) -> UIColor {
         var cString = stringToConvert.trimmingCharacters(in: CharacterSet.whitespaces).uppercased()
-
         if cString.hasPrefix("#") {
             cString = cString.SubStringFrom(from: 1)
         }
@@ -58,28 +56,23 @@ extension UIColor {
         if stringlen != 6 {
             return UIColor.white
         }
-
         let rString = cString.subString(start: 0, end: 2)
         let gString = cString.subString(start: 2, end: 4)
         let bString = cString.subString(start: 4, end: 6)
-
         var r: UInt32 = 0
         var g: UInt32 = 0
         var b: UInt32 = 0
         Scanner(string: rString).scanHexInt32(&r)
         Scanner(string: gString).scanHexInt32(&g)
         Scanner(string: bString).scanHexInt32(&b)
-
         return UIColor(red: CGFloat(r) / 255.0, green: CGFloat(g) / 255.0, blue: CGFloat(b) / 255.0, alpha: Alpha)
     }
 
     class func colorWithRGBH(red: Int, green: Int, blue: Int, Alpha: Int = 1) -> UIColor {
-
         return UIColor(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: CGFloat(Alpha))
     }
 
     class func colorWithRGB(red: Int, green: Int, blue: Int) -> UIColor {
-
         return colorWithRGBH(red: red, green: green, blue: blue, Alpha: 1)
     }
 }

@@ -22,7 +22,6 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         addAllControllers()
         makeUserAreaView()
         makeLeftListRootView()
@@ -37,7 +36,6 @@ class ViewController: UIViewController {
     }
 
     func addAllControllers() {
-
         let homeVC = HomeController()
         let studyVC = StudyPlanController()
         let liveVC = LiveController()
@@ -66,7 +64,6 @@ class ViewController: UIViewController {
     }
 
     func makeContainerView() {
-
         titleLabel = UILabel()
         titleLabel.textColor = UIColor.colorWithRGB(red: 66, green: 66, blue: 66)
         titleLabel.font = UIFont.systemFont(ofSize: 30)
@@ -76,7 +73,6 @@ class ViewController: UIViewController {
             make.top.equalTo(userView.snp.bottom).offset(20)
             make.left.equalTo(leftListRootView.snp.right).offset(20)
         }
-
         containerView = UIView()
         self.view.addSubview(containerView)
         containerView.snp.makeConstraints { make in
@@ -84,9 +80,7 @@ class ViewController: UIViewController {
             make.left.equalTo(leftListRootView.snp.right).offset(20)
             make.right.bottom.equalTo(-20)
         }
-
         currentView = self.viewsArray[0]
-
         containerView.addSubview(currentView!)
         currentView?.snp.makeConstraints { make in
             make.top.left.bottom.right.equalTo(0)
@@ -94,7 +88,6 @@ class ViewController: UIViewController {
     }
 
     func makeLeftListRootView() {
-
         titlesArray = [
             "我的首页",
             "我的学习计划",
@@ -104,7 +97,6 @@ class ViewController: UIViewController {
             "我的批改",
             "我的逐题精讲",
         ]
-
         leftListRootView = LeftListRootView(titlesArray: titlesArray, frame: CGRect.zero)
         self.view.addSubview(leftListRootView)
         leftListRootView.clickButtonBlock = { (tag: Int) in
@@ -120,7 +112,6 @@ class ViewController: UIViewController {
             }
         }
         leftListRootView.snp.makeConstraints { make in
-
             make.left.equalTo(10)
             make.top.equalTo(userView.snp.bottom).offset(20)
             make.width.equalTo(170)
@@ -128,7 +119,6 @@ class ViewController: UIViewController {
     }
 
     func makeUserAreaView() {
-
         userView = UserAreaView(frame: CGRect.zero)
         self.view.addSubview(userView)
         userView.signUpBlock = {

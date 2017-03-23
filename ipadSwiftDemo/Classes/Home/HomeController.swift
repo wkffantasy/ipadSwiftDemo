@@ -25,7 +25,6 @@ class HomeController: UIViewController, UIScrollViewDelegate {
     }
 
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-
         let contentOffset = scrollView.contentOffset
         let scrollFrame = scrollView.frame
         let page = contentOffset.x / scrollFrame.size.width
@@ -39,7 +38,6 @@ class HomeController: UIViewController, UIScrollViewDelegate {
     }
 
     func setupViews() {
-
         let titleArray = [
             "全部",
             "学习中",
@@ -52,11 +50,10 @@ class HomeController: UIViewController, UIScrollViewDelegate {
             make.top.left.right.equalTo(0)
             make.height.equalTo(40)
         }
-        tabsSelectView.clickButtonBlock = { [weak self](tag: Int) in
+        tabsSelectView.clickButtonBlock = { [weak self] (tag: Int) in
             print("in controller,click button,the tag is \(tag)")
             self?.letItScroll(tag: tag)
         }
-
         vcScrollView = UIScrollView.init()
         vcScrollView.showsHorizontalScrollIndicator = false
         vcScrollView.isPagingEnabled = true
@@ -67,7 +64,6 @@ class HomeController: UIViewController, UIScrollViewDelegate {
             make.top.equalTo(tabsSelectView.snp.bottom)
             make.bottom.right.left.equalTo(0)
         }
-
         let containerView = UIView()
         vcScrollView.addSubview(containerView)
         containerView.snp.makeConstraints { make in
@@ -75,7 +71,6 @@ class HomeController: UIViewController, UIScrollViewDelegate {
             make.width.greaterThanOrEqualTo(vcScrollView)
             make.height.equalTo(vcScrollView.snp.height)
         }
-
         let haVC = HomeAllController()
         let hsVC = HomeStudyingController()
         let hnsVC = HomeNotStartController()

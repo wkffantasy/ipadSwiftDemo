@@ -14,7 +14,6 @@ class HUDTool: NSObject {
     static let tool = HUDTool()
 
     func showTextHUD(text: String?, view: UIView) -> MBProgressHUD {
-
         let hud = MBProgressHUD.showAdded(to: view, animated: true)
         hud.label.textColor = UIColor.colorWithHexString("7f7f7f")
         hud.mode = .text
